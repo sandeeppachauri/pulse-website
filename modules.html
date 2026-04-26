@@ -6,6 +6,62 @@
   <title>Modules — Pulse Monitor</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230891b2'/><path d='M8 22 L13 14 L17 18 L21 10 L26 10' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+  <style>
+    .module-block {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 40px;
+      align-items: start;
+      padding: 52px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .module-block:last-child { border-bottom: none; }
+    @media (max-width: 768px) { .module-block { grid-template-columns: 1fr; gap: 20px; } }
+    .module-sidebar {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+    .module-sidebar-icon {
+      width: 56px; height: 56px;
+      border-radius: var(--radius-lg);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px;
+    }
+    .module-sidebar-icon svg { width: 26px; height: 26px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .module-sidebar h4 { font-size: 14px; font-weight: 500; margin-bottom: 10px; }
+    .cap-pill {
+      display: inline-flex; align-items: center;
+      background: var(--sky); color: var(--navy-light);
+      border: 1px solid var(--sky-mid); border-radius: 999px;
+      font-size: 10px; font-weight: 500; padding: 2px 9px;
+      margin: 2px 1px;
+    }
+    .benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
+    @media (max-width: 640px) { .benefit-grid { grid-template-columns: 1fr; } }
+    .benefit-row {
+      display: flex; gap: 11px; align-items: flex-start;
+      padding: 13px; background: var(--sky-soft);
+      border: 1px solid var(--border); border-radius: var(--radius-md);
+    }
+    .benefit-icon { width: 30px; height: 30px; border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .benefit-icon svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+    .benefit-title { font-size: 12px; font-weight: 500; color: var(--text-primary); margin-bottom: 2px; }
+    .benefit-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.55; }
+    .anchor-nav {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+    }
+    .anchor-nav a {
+      font-size: 12px; color: var(--text-secondary);
+      padding: 4px 12px; border-radius: 999px;
+      border: 1px solid var(--border);
+      transition: background .15s, color .15s, border-color .15s;
+    }
+    .anchor-nav a:hover { background: var(--sky); color: var(--navy); border-color: var(--sky-mid); }
+  </style>
 </head>
 <body>
 
@@ -28,165 +84,302 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero-badge"><span class="badge badge-blue">10+ modules</span></div>
+    <div class="page-hero-badge"><span class="badge badge-blue">12 modules</span></div>
     <h1>Every module your middleware team needs</h1>
-    <p>Monitoring, alerting, deployment, analytics, and AI — all accessible from a single application context root.</p>
+    <p>From live server health to API dependency tracking, message queues to cloud integrations — Pulse Monitor covers the full operational lifecycle of your Oracle Fusion Middleware platform.</p>
+    <div class="page-hero-actions">
+      <a href="contact.html" class="btn btn-primary">Request access</a>
+      <a href="features.html" class="btn btn-outline">See all features</a>
+    </div>
   </div>
 </section>
 
 <div class="stats-strip">
-  <div class="stat-cell"><div class="stat-num">10+</div><div class="stat-label">Application modules</div></div>
-  <div class="stat-cell"><div class="stat-num">5</div><div class="stat-label">JPA persistence units</div></div>
-  <div class="stat-cell"><div class="stat-num">30+</div><div class="stat-label">REST / servlet endpoints</div></div>
-  <div class="stat-cell"><div class="stat-num">4</div><div class="stat-label">Deployment environments</div></div>
+  <div class="stat-cell"><div class="stat-num">12</div><div class="stat-label">Operational modules</div></div>
+  <div class="stat-cell"><div class="stat-num">~10h</div><div class="stat-label">Weekly hours saved per team</div></div>
+  <div class="stat-cell"><div class="stat-num">4</div><div class="stat-label">Environments — Local, SIT, UAT, PROD</div></div>
+  <div class="stat-cell"><div class="stat-num">24/7</div><div class="stat-label">Automated background monitoring</div></div>
 </div>
 
-<!-- MODULE 1: MONITORING -->
-<section class="section" id="monitoring">
+<!-- ANCHOR NAV -->
+<div style="background:white;">
   <div class="container">
-    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;">
-      <div style="text-align:center;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);">
-        <div style="width:56px;height:56px;background:var(--sky);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--navy-light)" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-        </div>
-        <div style="font-size:14px;font-weight:500;color:var(--text-primary)">Monitoring</div>
-        <span class="badge badge-blue" style="margin-top:8px;">WLST</span>
-      </div>
-      <div>
-        <h3>Server &amp; node monitoring</h3>
-        <p class="mt-12">The core of Pulse Monitor. WLST Python scripts bundled inside the WAR connect to the WebLogic admin server, walk the domain, and collect node-level metrics — without any external agent.</p>
-        <div class="grid-3 mt-24">
-          <div class="card"><h4 style="font-size:13px;">Live dashboard</h4><p style="font-size:12px;margin-top:5px;">RAM, heap, stuck threads, active requests, lifecycle state per node. Refreshed every 30s.</p><div class="mono mt-8">/dashboard</div></div>
-          <div class="card"><h4 style="font-size:13px;">Server details</h4><p style="font-size:12px;margin-top:5px;">Deep-dive per server: WLST-backed views of all server attributes and runtime state.</p><div class="mono mt-8">/serverDetails</div></div>
-          <div class="card"><h4 style="font-size:13px;">JMS queue tracking</h4><p style="font-size:12px;margin-top:5px;">Queue depth, consumer counts, and message throughput via WLST JMS runtime MBeans.</p><div class="mono mt-8">/jmsQueueTracking</div></div>
-          <div class="card"><h4 style="font-size:13px;">JDBC data sources</h4><p style="font-size:12px;margin-top:5px;">Connection pool size, waiters, leaked connections, and health status per data source.</p><div class="mono mt-8">/dataSource</div></div>
-          <div class="card"><h4 style="font-size:13px;">On-demand reporting</h4><p style="font-size:12px;margin-top:5px;">Generate custom metric reports on demand for any server or time range.</p><div class="mono mt-8">/OnDemandReport</div></div>
-          <div class="card"><h4 style="font-size:13px;">Status log history</h4><p style="font-size:12px;margin-top:5px;">Metric snapshots persisted to PULSE_SERVER_STATUS_LOG for time-series dashboards.</p><div class="mono mt-8">PULSE_SERVER_STATUS_LOG</div></div>
-        </div>
+    <div class="anchor-nav">
+      <a href="#server">Server health</a>
+      <a href="#soa">SOA composites</a>
+      <a href="#queues">Message queues</a>
+      <a href="#api">API manager</a>
+      <a href="#alerts">Alerts</a>
+      <a href="#deploy">Deployment</a>
+      <a href="#logs">Log analytics</a>
+      <a href="#ai">AI assistant</a>
+      <a href="#certs">Certificates</a>
+      <a href="#datasources">Data sources</a>
+      <a href="#schedulers">Schedulers</a>
+      <a href="#cloud">Cloud &amp; integrations</a>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+<div class="container">
+
+  <!-- 1. SERVER HEALTH -->
+  <div class="module-block" id="server">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-blue"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+      <h4>Server Health Dashboard</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">Real-time</span><span class="cap-pill">Multi-cluster</span><span class="cap-pill">30s refresh</span></div>
+    </div>
+    <div>
+      <h3>See every node, at a glance, right now</h3>
+      <p class="mt-12">Your operations team should never have to log into the WebLogic console just to find out if a server is healthy. The Pulse Monitor live dashboard aggregates memory usage, heap pressure, thread activity, and request throughput for every node in your cluster — updated every 30 seconds.</p>
+      <p class="mt-12">When a node starts struggling, the dashboard flags it immediately. Select any server from the list to see its full metric breakdown, 24-hour request traffic chart coloured by peak and off-peak windows, and endpoint performance data from automated log analysis.</p>
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div><div class="benefit-title">Live KPI strip</div><div class="benefit-desc">Total servers, active nodes, average RAM, heap pressure, stuck threads, and requests per hour — all on one screen.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/></svg></div><div><div class="benefit-title">Node resource table</div><div class="benefit-desc">Per-node RAM bars, heap used vs free, stuck thread count, and active request count across every server.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="benefit-title">24-hour traffic chart</div><div class="benefit-desc">Peak vs off-peak request traffic per server — coloured by business hours windows so patterns are obvious.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-purple"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="benefit-title">Metric history</div><div class="benefit-desc">Every snapshot is saved so your team can query historical health data when an incident needs a post-mortem.</div></div></div>
       </div>
     </div>
   </div>
-</section>
 
-<hr style="border:none;border-top:1px solid var(--border);" />
-
-<!-- MODULE 2: SOA -->
-<section class="section section-alt" id="soa">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;">
-      <div style="text-align:center;padding:24px;background:white;border:1px solid var(--border);border-radius:var(--radius-lg);">
-        <div style="width:56px;height:56px;background:#e1f5ee;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0f6e56" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        </div>
-        <div style="font-size:14px;font-weight:500;color:var(--text-primary)">SOA composites</div>
-        <span class="badge badge-teal" style="margin-top:8px;">SOA Suite</span>
-      </div>
-      <div>
-        <h3>SOA composite monitoring</h3>
-        <p class="mt-12">Query the SOA infrastructure database directly via the <strong>SOAPU</strong> persistence unit. View all deployed composites, their revision states, fault counts, and instance details — without logging into EM.</p>
-        <div class="grid-3 mt-24">
-          <div class="card"><h4 style="font-size:13px;">Composite list</h4><p style="font-size:12px;margin-top:5px;">All composites with partition, revision, lifecycle state, and fault count at a glance.</p><div class="mono mt-8">/composites</div></div>
-          <div class="card"><h4 style="font-size:13px;">Composite detail</h4><p style="font-size:12px;margin-top:5px;">Drill into a specific composite — binding components, service endpoints, recent faults.</p><div class="mono mt-8">/compositeDetails</div></div>
-          <div class="card"><h4 style="font-size:13px;">Utility integration</h4><p style="font-size:12px;margin-top:5px;">Utility batch integration jobs and outbound C2M detail views with instance tracking.</p><div class="mono mt-8">/utility_integration</div></div>
-        </div>
+  <!-- 2. SOA COMPOSITES -->
+  <div class="module-block" id="soa">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+      <h4>SOA Composite Monitoring</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">Fault tracking</span><span class="cap-pill">Live state</span><span class="cap-pill">All clusters</span></div>
+    </div>
+    <div>
+      <h3>Know which composites are faulting before users complain</h3>
+      <p class="mt-12">SOA composite faults accumulate silently until a business process fails. Pulse Monitor queries the SOA infrastructure directly to surface composite health, fault counts, and instance states across all clusters — without needing to open Enterprise Manager.</p>
+      <p class="mt-12">Your team sees at a glance which composites are active, retiring, or crossing fault thresholds, then can drill into any individual composite for detail in seconds.</p>
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><div><div class="benefit-title">Composite health list</div><div class="benefit-desc">All composites with partition, revision, state, and 24-hour fault count in one clear view.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">Fault threshold alerts</div><div class="benefit-desc">Set fault count thresholds per composite — Pulse fires an alert the moment a service starts degrading.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div><div><div class="benefit-title">Instance drill-down</div><div class="benefit-desc">Click into any composite to see binding components, service endpoints, and recent instance activity.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-green"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="benefit-title">C2M &amp; utility batch</div><div class="benefit-desc">Dedicated views for outbound C2M and utility batch integration jobs with instance and throughput tracking.</div></div></div>
       </div>
     </div>
   </div>
-</section>
 
-<hr style="border:none;border-top:1px solid var(--border);" />
-
-<!-- MODULE 3: ALERTS -->
-<section class="section" id="alerts">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;">
-      <div style="text-align:center;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);">
-        <div style="width:56px;height:56px;background:#faeeda;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#854f0b" stroke-width="1.6"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-        <div style="font-size:14px;font-weight:500;color:var(--text-primary)">Alerts</div>
-        <span class="badge badge-amber" style="margin-top:8px;">Rules engine</span>
-      </div>
-      <div>
-        <h3>Alerts &amp; configuration</h3>
-        <p class="mt-12">Define alert types, thresholds, and notification targets. Alerts fire via JMS and appear in the dashboard notification panel — no email relay required.</p>
-        <div class="grid-3 mt-24">
-          <div class="card"><h4 style="font-size:13px;">Manage alerts</h4><p style="font-size:12px;margin-top:5px;">Create, edit, and delete alert rules. Set thresholds per system and alert type.</p><div class="mono mt-8">/ManageAlerts</div></div>
-          <div class="card"><h4 style="font-size:13px;">View alerts</h4><p style="font-size:12px;margin-top:5px;">Active and resolved alert history. Filter by system, severity, or alert type.</p><div class="mono mt-8">/ViewAlerts</div></div>
-          <div class="card"><h4 style="font-size:13px;">Alert type config</h4><p style="font-size:12px;margin-top:5px;">Configure available alert categories and their default severity levels.</p><div class="mono mt-8">/AlertTypeConfig</div></div>
-          <div class="card"><h4 style="font-size:13px;">System parameters</h4><p style="font-size:12px;margin-top:5px;">Global system parameter management — polling intervals, retention periods, etc.</p><div class="mono mt-8">/SystemParameters</div></div>
-          <div class="card"><h4 style="font-size:13px;">Application config</h4><p style="font-size:12px;margin-top:5px;">Manage registered server systems, INFRA_HEALTH_CHECK flags, trust store paths.</p><div class="mono mt-8">/ApplicationConfiguration.jsp</div></div>
-          <div class="card"><h4 style="font-size:13px;">JMS notifications</h4><p style="font-size:12px;margin-top:5px;">Dashboard notification panel — unread count badge, message detail overlay.</p><div class="mono mt-8">/dashboard/jms/notifications</div></div>
-        </div>
+  <!-- 3. MESSAGE QUEUES -->
+  <div class="module-block" id="queues">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-amber"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+      <h4>Message Queue Monitoring</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">JMS queues</span><span class="cap-pill">Backlog alerts</span><span class="cap-pill">Message detail</span></div>
+    </div>
+    <div>
+      <h3>Stop JMS backlogs before they become business incidents</h3>
+      <p class="mt-12">Message queue backlogs are one of the most common causes of silent failures in Oracle middleware. A queue accumulates messages, no one notices, and eventually a downstream business process stalls. Pulse Monitor gives your team continuous visibility into every JMS queue — depth, consumer counts, and throughput — without writing scripts or logging into the admin console.</p>
+      <p class="mt-12">Configurable backlog thresholds trigger alerts the moment a queue starts accumulating messages beyond normal levels, long before the business notices anything is wrong.</p>
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="benefit-title">Queue depth tracking</div><div class="benefit-desc">Live depth, consumer count, and pending messages for every JMS queue across all servers — constantly refreshed.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-coral"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">Backlog alerts</div><div class="benefit-desc">Set per-queue thresholds. Get notified the moment a queue backs up beyond acceptable levels.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="benefit-title">Dashboard notifications</div><div class="benefit-desc">JMS-delivered alerts appear in the dashboard notification panel including message content and timestamp.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="benefit-title">Message browse &amp; detail</div><div class="benefit-desc">Inspect individual JMS messages directly from the dashboard — body, headers, and metadata without any tooling.</div></div></div>
       </div>
     </div>
   </div>
-</section>
 
-<hr style="border:none;border-top:1px solid var(--border);" />
-
-<!-- MODULE 4: DEPLOYMENT -->
-<section class="section section-alt" id="deploy">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;">
-      <div style="text-align:center;padding:24px;background:white;border:1px solid var(--border);border-radius:var(--radius-lg);">
-        <div style="width:56px;height:56px;background:#faece7;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#993c1d" stroke-width="1.6"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <div style="font-size:14px;font-weight:500;color:var(--text-primary)">Deployment</div>
-        <span class="badge badge-amber" style="margin-top:8px;">Git · FTP · WLST</span>
-      </div>
-      <div>
-        <h3>SOA/OSB deployment workflows</h3>
-        <p class="mt-12">End-to-end deployment pipeline for SOA composites and OSB services. Supports Git, FTP, and manual artifact paths. Encrypted connection settings. Full build and deployment audit trail.</p>
-        <div class="grid-3 mt-24">
-          <div class="card"><h4 style="font-size:13px;">Deployment dashboard</h4><p style="font-size:12px;margin-top:5px;">Overview of all registered deployment packages, their targets, and recent deploy history.</p><div class="mono mt-8">/SoaOsbDeployment</div></div>
-          <div class="card"><h4 style="font-size:13px;">Build &amp; deploy</h4><p style="font-size:12px;margin-top:5px;">Trigger a build from Git source, package artifacts, then deploy to target environment via WLST.</p><div class="mono mt-8">Execute workflow</div></div>
-          <div class="card"><h4 style="font-size:13px;">Build audit API</h4><p style="font-size:12px;margin-top:5px;">REST API for CI/CD integration. Query build outcomes and deployment status programmatically.</p><div class="mono mt-8">/api/soa-osb/build-audit</div></div>
-        </div>
+  <!-- 4. API MANAGER -->
+  <div class="module-block" id="api">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-coral"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+      <h4>API Dependency Manager</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">Swagger catalog</span><span class="cap-pill">Dependency maps</span><span class="cap-pill">Reachability</span></div>
+    </div>
+    <div>
+      <h3>Understand your API landscape before making changes</h3>
+      <p class="mt-12">Modern Oracle middleware environments are webs of interconnected services. When you change or decommission an API, do you know every service that depends on it? Pulse Monitor maintains a Swagger-backed API catalog with full dependency hierarchy — so your team understands downstream impact before any change reaches production.</p>
+      <p class="mt-12">Automated reachability checks ping every registered endpoint on a schedule and surface failures in the dashboard immediately. No more discovering broken integrations after a deployment.</p>
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-coral"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><div class="benefit-title">Swagger API hub</div><div class="benefit-desc">Browse, preview, and share API specifications for every registered service in one central place.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="3" cy="6" r="2"/><circle cx="21" cy="6" r="2"/><circle cx="3" cy="18" r="2"/><circle cx="21" cy="18" r="2"/><line x1="5" y1="6" x2="10" y2="11"/><line x1="14" y1="13" x2="19" y2="8"/></svg></div><div><div class="benefit-title">Dependency hierarchy</div><div class="benefit-desc">Visual map of which services consume which APIs — know the blast radius of any change before you make it.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="benefit-title">Reachability monitoring</div><div class="benefit-desc">Scheduled pings verify every API endpoint. Unreachable APIs are flagged in the dashboard the moment they go down.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div><div><div class="benefit-title">Dependency detail</div><div class="benefit-desc">Drill into any API to see all dependents, latest reachability status, and linked Swagger documentation.</div></div></div>
       </div>
     </div>
   </div>
-</section>
 
-<hr style="border:none;border-top:1px solid var(--border);" />
-
-<!-- MODULE 5: AI & LOGS -->
-<section class="section" id="ai">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;">
-      <div style="text-align:center;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);">
-        <div style="width:56px;height:56px;background:#eeedfe;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#534ab7" stroke-width="1.6"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        </div>
-        <div style="font-size:14px;font-weight:500;color:var(--text-primary)">AI &amp; analytics</div>
-        <span class="badge badge-purple" style="margin-top:8px;">LangChain4j</span>
-      </div>
-      <div>
-        <h3>AI chatbot, log analytics &amp; API tracking</h3>
-        <p class="mt-12">The Qiyara AI assistant, AI-based log analytics, integration log review, and API dependency tracker — the intelligence layer of Pulse Monitor.</p>
-        <div class="grid-3 mt-24">
-          <div class="card"><h4 style="font-size:13px;">Qiyara chatbot</h4><p style="font-size:12px;margin-top:5px;">Natural language queries. Async servlet. Model info ping. Suggested queries widget.</p><div class="mono mt-8">/chatbot</div></div>
-          <div class="card"><h4 style="font-size:13px;">AI log analytics</h4><p style="font-size:12px;margin-top:5px;">Pattern detection across ingested integration logs. Fault clustering and anomaly highlighting.</p><div class="mono mt-8">/AiBasedAnalytics</div></div>
-          <div class="card"><h4 style="font-size:13px;">Integration log review</h4><p style="font-size:12px;margin-top:5px;">Browse scheduler-ingested log analysis records. Filter by system, date range, and error type.</p><div class="mono mt-8">/IntegrationLogReview</div></div>
-          <div class="card"><h4 style="font-size:13px;">API dependency tracker</h4><p style="font-size:12px;margin-top:5px;">Register and monitor API dependencies with reachability checks and hierarchy views.</p><div class="mono mt-8">/ApiDependencyTracker</div></div>
-          <div class="card"><h4 style="font-size:13px;">Swagger / API hub</h4><p style="font-size:12px;margin-top:5px;">Built-in Swagger document browser and API preview for all registered services.</p><div class="mono mt-8">/swaggerDocument</div></div>
-          <div class="card"><h4 style="font-size:13px;">ESS schedulers</h4><p style="font-size:12px;margin-top:5px;">View and manage Oracle ESS scheduler jobs — log analysis, cert scan, API ping jobs.</p><div class="mono mt-8">/schedulers</div></div>
-        </div>
+  <!-- 5. ALERTS -->
+  <div class="module-block" id="alerts">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <h4>Alerts &amp; Notifications</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">Configurable</span><span class="cap-pill">JMS delivery</span><span class="cap-pill">Alert history</span></div>
+    </div>
+    <div>
+      <h3>Get notified before users raise a ticket</h3>
+      <p class="mt-12">Every significant operational event — stuck threads, JDBC pool pressure, JMS backlog, certificate expiry, composite faults, unreachable APIs — can be configured as a Pulse alert. Define the threshold, assign the severity, and Pulse handles delivery via JMS to your operations team in real time.</p>
+      <p class="mt-12">Alert history is stored and searchable. Your team can filter by system, date range, and severity to understand patterns and improve response over time — not just react to individual events.</p>
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-coral"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div><div class="benefit-title">Stuck threads &amp; node faults</div><div class="benefit-desc">Fires immediately when thread counts or node states cross configured thresholds on any cluster node.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div><div class="benefit-title">JDBC pool pressure</div><div class="benefit-desc">Alert when a connection pool usage exceeds your threshold — before requests start queuing and timing out.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/></svg></div><div><div class="benefit-title">JMS queue backlog</div><div class="benefit-desc">Catch message accumulation the moment a queue depth crosses its threshold — before business processes stall.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-green"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8"/></svg></div><div><div class="benefit-title">Certificate expiry</div><div class="benefit-desc">Automated warning when any certificate is within 15 days of expiry — across all environments and trust stores.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div><div class="benefit-title">Composite fault threshold</div><div class="benefit-desc">SOA composite fault count exceeded — know the moment a service starts degrading, not after users complain.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="benefit-title">Unreachable API</div><div class="benefit-desc">A registered endpoint failed its reachability check — immediate notification to the team via the dashboard panel.</div></div></div>
       </div>
     </div>
   </div>
+
+  <!-- 6. DEPLOYMENT -->
+  <div class="module-block" id="deploy">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-coral"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+      <h4>SOA / OSB Deployment</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">Git &amp; FTP</span><span class="cap-pill">Multi-env</span><span class="cap-pill">Audit trail</span></div>
+    </div>
+    <div>
+      <h3>Deploy composites and services without leaving the browser</h3>
+      <p class="mt-12">Deploying a SOA composite to production typically involves multiple tools — building from source, packaging the artifact, running scripts, verifying the deployment, and updating a spreadsheet as a record. Pulse Monitor replaces this entire workflow with a guided browser-based pipeline that produces a full audit trail automatically.</p>
+      <p class="mt-12">Select the package, select the environment, and click deploy. Pulse handles everything from build to verification and records the outcome for compliance and post-deployment review.</p>
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-coral"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="benefit-title">Browser-based deployment</div><div class="benefit-desc">Select package, select environment, deploy — the pipeline handles build, package, and verification automatically.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg></div><div><div class="benefit-title">Git &amp; FTP source support</div><div class="benefit-desc">Pull artifacts from Git repositories or FTP servers — whichever your team uses for source control and distribution.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-green"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><div class="benefit-title">Full audit trail</div><div class="benefit-desc">Every deployment is logged — who deployed, what, when, to which environment, and whether it succeeded.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-purple"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><div class="benefit-title">Multi-environment pipelines</div><div class="benefit-desc">SIT, UAT, and PROD each have their own connection settings — managed in Pulse, not in spreadsheets.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. LOG ANALYTICS -->
+  <div class="module-block" id="logs">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-blue"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <h4>Integration Log Review</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">Auto ingestion</span><span class="cap-pill">AI patterns</span><span class="cap-pill">FTP download</span></div>
+    </div>
+    <div>
+      <h3>Find the fault in minutes, not an afternoon</h3>
+      <p class="mt-12">Log analysis in Oracle middleware is typically manual and time-consuming — log into the server, find the right file, search for errors, correlate across nodes. Pulse Monitor automates the entire process with a scheduled log ingestion pipeline that runs in the background and surfaces meaningful results in the dashboard.</p>
+      <p class="mt-12">The AI analytics layer groups recurring faults, highlights slow query patterns, and identifies anomalies that would be invisible in raw log files — with context about which service, which server, and how often.</p>
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div><div class="benefit-title">Scheduled log ingestion</div><div class="benefit-desc">Log files are picked up and processed automatically — no manual intervention, no SSH sessions required.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-purple"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div><div><div class="benefit-title">AI pattern detection</div><div class="benefit-desc">Recurring faults, slow queries, and anomalies are grouped and surfaced with suggested remediation hints.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div><div><div class="benefit-title">One-click log download</div><div class="benefit-desc">Download any log file directly from the dashboard via FTP — no SSH, no shared drives, no waiting.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="benefit-title">Endpoint traffic analysis</div><div class="benefit-desc">Access log analysis surfaces your busiest endpoints, request counts, and unusual traffic patterns over 24 hours.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. AI ASSISTANT -->
+  <div class="module-block" id="ai">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <h4>Qiyara AI Assistant</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">Natural language</span><span class="cap-pill">LLM-powered</span><span class="cap-pill">Always-on</span></div>
+    </div>
+    <div>
+      <h3>Ask your middleware questions in plain English</h3>
+      <p class="mt-12">Qiyara is the AI assistant built into Pulse Monitor. Instead of navigating menus to find information, your team simply asks — "Which composites had faults today?", "Is any certificate expiring this month?", "What is the heap pressure on the production cluster?" — and gets answers immediately from the Pulse dashboard widget.</p>
+      <p class="mt-12">Qiyara queries the same Pulse metadata your dashboard shows, meaning answers are fast, relevant, and grounded in real data. New team members get answers without needing to know which screen to navigate to.</p>
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div><div class="benefit-title">Natural language queries</div><div class="benefit-desc">Ask about server health, faults, deployments, queue status, or certificate expiry in plain language.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="benefit-title">Instant answers</div><div class="benefit-desc">Qiyara responds in seconds by querying live and cached Pulse data — no waiting for reports to generate.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="benefit-title">Intent-based responses</div><div class="benefit-desc">"Is anything wrong?" returns a prioritised summary of active alerts and composite faults — no navigation needed.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg></div><div><div class="benefit-title">Configurable LLM</div><div class="benefit-desc">Point Qiyara at your preferred AI provider — on-premises model or cloud. Configured in your environment settings.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. CERTIFICATES -->
+  <div class="module-block" id="certs">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-green"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8M12 3v4"/></svg></div>
+      <h4>Certificate Tracker</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">Auto-scan</span><span class="cap-pill">15-day warning</span><span class="cap-pill">All environments</span></div>
+    </div>
+    <div>
+      <h3>Expired certificates cause outages. Pulse stops that.</h3>
+      <p class="mt-12">Expired SSL/TLS certificates are one of the most avoidable causes of production incidents — yet they still happen because tracking them manually across multiple trust stores and environments is tedious and easy to forget. Pulse Monitor automates the entire process.</p>
+      <p class="mt-12">The scheduler scans every configured trust store path across all registered environments and records each certificate's expiry date. Certificates expiring within 15 days appear as a KPI badge on the main dashboard — your team sees the warning the moment they log in, every single day.</p>
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-green"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="benefit-title">Automated trust store scan</div><div class="benefit-desc">Scheduler scans all configured trust store paths — no manual checking, no spreadsheet tracking required.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">15-day dashboard warning</div><div class="benefit-desc">KPI badge on the main dashboard highlights certs expiring within 15 days — impossible to overlook.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div><div><div class="benefit-title">Full certificate table</div><div class="benefit-desc">Browse every certificate across every environment — system, trust store path, alias, expiry date, and days remaining.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-coral"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div><div><div class="benefit-title">Alert integration</div><div class="benefit-desc">Certificate expiry alerts feed into the same Pulse notification system — one consistent place for all team alerts.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. DATA SOURCES -->
+  <div class="module-block" id="datasources">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-teal"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg></div>
+      <h4>JDBC Data Source Monitor</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">Pool health</span><span class="cap-pill">Live status</span><span class="cap-pill">All connections</span></div>
+    </div>
+    <div>
+      <h3>Know when a database connection pool is under pressure</h3>
+      <p class="mt-12">JDBC connection pool exhaustion is a frequent cause of middleware incidents. Requests queue up waiting for a connection, throughput drops, and eventually services time out. The Pulse data source monitor surfaces pool status for every configured connection in real time — so your team responds before the pool runs dry.</p>
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="benefit-title">Live pool status</div><div class="benefit-desc">Running, inactive, or error status for every data source — across all servers in your WebLogic domain.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">Pool pressure alerts</div><div class="benefit-desc">Configurable usage threshold alerts — notified before the pool exhausts and requests start failing.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><div><div class="benefit-title">Status visual breakdown</div><div class="benefit-desc">At-a-glance chart showing running vs inactive vs error connections — health visible without reading a table.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-green"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><div class="benefit-title">All configured sources</div><div class="benefit-desc">Covers SOA, MDS, ESS scheduler, CCB/JDE, pulseMonitor, and any additional sources your environment uses.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. SCHEDULERS -->
+  <div class="module-block" id="schedulers">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-blue"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <h4>ESS Scheduler Monitor</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">Job status</span><span class="cap-pill">Run history</span><span class="cap-pill">ESS-backed</span></div>
+    </div>
+    <div>
+      <h3>Monitor the background jobs that keep Pulse running</h3>
+      <p class="mt-12">Pulse Monitor's background jobs — log analysis, certificate scanning, API reachability checks, metric collection — all run via Oracle Enterprise Scheduler Service (ESS). The scheduler module gives your team clear visibility into which jobs are running, which have failed, and when each is next scheduled to run.</p>
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="benefit-title">Job status board</div><div class="benefit-desc">See which Pulse background jobs are scheduled, running, completed, or failed — at any time.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></div><div><div class="benefit-title">Run history</div><div class="benefit-desc">Full history of past job executions with timestamps, duration, and outcome for every run.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">Failed job alerts</div><div class="benefit-desc">A failed scheduler job surfaces as a Pulse alert — your team is notified rather than discovering it hours later.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-green"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg></div><div><div class="benefit-title">Schedule visibility</div><div class="benefit-desc">See when each background job is next due to run — plan maintenance windows around scheduled analysis jobs.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. CLOUD & INTEGRATIONS -->
+  <div class="module-block" id="cloud">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg></div>
+      <h4>Cloud &amp; External Integrations</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">Cloud APIs</span><span class="cap-pill">CCB / JDE</span><span class="cap-pill">C2M</span></div>
+    </div>
+    <div>
+      <h3>Monitor beyond the WebLogic domain — into the cloud and beyond</h3>
+      <p class="mt-12">Oracle middleware environments integrate with cloud applications, external APIs, utility platforms, and legacy ERP systems. Pulse Monitor extends visibility beyond the WebLogic domain to cover the health and behaviour of the systems your middleware connects to — so your team has the full picture, not just the middle layer.</p>
+      <p class="mt-12">Whether your integration layer talks to Oracle CCB, JD Edwards, a cloud-hosted API, or a Customer-to-Meter platform, Pulse tracks the outcomes — response times, fault counts, reachability status — alongside your on-premises middleware health.</p>
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg></div><div><div class="benefit-title">Cloud API monitoring</div><div class="benefit-desc">Register cloud-hosted API endpoints in the Pulse catalog — reachability checks run on schedule and failures surface in the dashboard immediately.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><div class="benefit-title">CCB / JDE integration views</div><div class="benefit-desc">Dedicated views for Oracle Customer Care and Billing and JD Edwards integration data — visible alongside your SOA metrics.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="benefit-title">Outbound C2M tracking</div><div class="benefit-desc">Monitor Customer-to-Meter outbound integration jobs — instance states, processing status, and fault counts in one place.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div><div><div class="benefit-title">External dependency map</div><div class="benefit-desc">The API dependency tracker covers cloud and external systems as well as internal services — full blast-radius analysis before any change.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-green"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><div class="benefit-title">AI-assisted integration health</div><div class="benefit-desc">Ask Qiyara "are any CCB jobs failing today?" — drawing on log analysis, alert data, and integration status.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-coral"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><div><div class="benefit-title">Configurable source mapping</div><div class="benefit-desc">Map external system data sources to Pulse — add new cloud or ERP integrations without changing application code.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
 </section>
 
+<!-- CTA -->
 <section style="background:var(--teal);padding:56px 0;">
   <div class="container text-center">
-    <h2 style="color:white;">All modules. One deployment.</h2>
-    <p style="color:rgba(255,255,255,.75);max-width:420px;margin:12px auto 0;">A single WAR on your WebLogic server unlocks the full capability of Pulse Monitor across all environments.</p>
+    <h2 style="color:white;">All 12 modules. One deployment.</h2>
+    <p style="color:rgba(255,255,255,.75);max-width:440px;margin:12px auto 0;">A single deployment to your WebLogic server gives your team access to everything — from server health to cloud API monitoring.</p>
     <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px;">
       <a href="contact.html" class="btn btn-white">Get started</a>
-      <a href="how-it-works.html" class="btn" style="color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.3);padding:10px 22px;">Deployment guide</a>
+      <a href="how-it-works.html" class="btn" style="color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.3);padding:10px 22px;">How it works</a>
     </div>
   </div>
 </section>
@@ -194,12 +387,12 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Pulse Monitor</div><p>Enterprise monitoring for Oracle Fusion Middleware.</p></div>
+      <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Pulse Monitor</div><p>Enterprise monitoring for Oracle Fusion Middleware. Built for WebLogic operations teams.</p></div>
       <div class="footer-col"><h5>Product</h5><a href="features.html">Features</a><a href="modules.html">Modules</a><a href="how-it-works.html">How it works</a><a href="technology.html">Technology</a></div>
-      <div class="footer-col"><h5>Platform</h5><a href="technology.html">WebLogic 12c</a><a href="technology.html">SOA Suite</a><a href="technology.html">OSB</a></div>
+      <div class="footer-col"><h5>Platform</h5><a href="technology.html">WebLogic 12c</a><a href="technology.html">SOA Suite</a><a href="technology.html">Oracle DB</a></div>
       <div class="footer-col"><h5>Company</h5><a href="contact.html">Contact</a><a href="contact.html">Request access</a></div>
     </div>
-    <div class="footer-bottom"><p>© 2026 Pulse Monitor</p><div class="footer-tags"><span class="footer-tag">Java EE 8</span><span class="footer-tag">WebLogic 12c</span><span class="footer-tag">AI-powered</span></div></div>
+    <div class="footer-bottom"><p>© 2026 Pulse Monitor · FMW Monitoring</p><div class="footer-tags"><span class="footer-tag">On-premises</span><span class="footer-tag">WebLogic 12c</span><span class="footer-tag">AI-powered</span></div></div>
   </div>
 </footer>
 <script src="js/main.js"></script>
