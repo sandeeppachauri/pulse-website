@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse Monitor — FMW Monitoring Platform</title>
+  <meta name="description" content="Enterprise monitoring for Oracle Fusion Middleware. Live dashboards, SOA composites, AI analytics, and one-click deployments." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230891b2'/><path d='M8 22 L13 14 L17 18 L21 10 L26 10' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      Pulse Monitor
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="how-it-works.html" class="nav-link">How it works</a>
+      <a href="modules.html" class="nav-link">Modules</a>
+      <a href="technology.html" class="nav-link">Technology</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta btn">Request access</a>
+    <button class="nav-mobile-toggle" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="home-hero">
+  <div class="container">
+    <div class="home-hero-grid">
+      <div>
+        <div class="page-hero-badge animate-up">
+          <span class="badge badge-teal"><span class="badge-dot"></span>Oracle FMW · WebLogic 12c · SOA · OSB</span>
+        </div>
+        <h1 class="animate-up delay-1">Full visibility into your Oracle Fusion Middleware stack</h1>
+        <p class="animate-up delay-2" style="font-size:17px; margin-top:14px; max-width:480px;">
+          Pulse Monitor unifies server health, SOA composites, alerts, deployments, log analytics, and AI-driven insights — purpose-built for WebLogic operations teams.
+        </p>
+        <div class="page-hero-actions animate-up delay-3">
+          <a href="features.html" class="btn btn-primary">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Explore features
+          </a>
+          <a href="how-it-works.html" class="btn btn-outline">How it works</a>
+        </div>
+      </div>
+      <!-- Dashboard preview visual -->
+      <div class="home-hero-visual animate-up delay-4">
+        <div class="hv-bar">
+          <div class="hv-dot" style="background:#0891b2"></div>
+          <div class="hv-dot" style="background:#b5d4f4; margin-left:2px"></div>
+          <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-left:6px">pulse-monitor / dashboard</span>
+        </div>
+        <div class="hv-kpis">
+          <div class="hv-kpi"><div class="hv-kpi-val" style="color:#0891b2">12</div><div class="hv-kpi-label">Active nodes</div></div>
+          <div class="hv-kpi"><div class="hv-kpi-val" style="color:#0f6e56">68%</div><div class="hv-kpi-label">RAM usage</div></div>
+          <div class="hv-kpi"><div class="hv-kpi-val" style="color:#3c3489">0</div><div class="hv-kpi-label">Stuck threads</div></div>
+          <div class="hv-kpi"><div class="hv-kpi-val" style="color:#854f0b">2.4k</div><div class="hv-kpi-label">Req / hour</div></div>
+          <div class="hv-kpi"><div class="hv-kpi-val" style="color:#27500a">24</div><div class="hv-kpi-label">Composites</div></div>
+          <div class="hv-kpi"><div class="hv-kpi-val" style="color:#791f1f">1</div><div class="hv-kpi-label">Cert &lt;15d</div></div>
+        </div>
+        <div style="padding:8px 0 4px;">
+          <div class="hv-node-row"><span style="font-family:var(--font-mono);font-size:11px;min-width:90px">SOAServer1</span><div class="hv-bar-track"><div class="hv-bar-fill" style="width:68%;background:#0891b2"></div></div><span style="font-family:var(--font-mono);font-size:10px;color:#0891b2">68%</span></div>
+          <div class="hv-node-row"><span style="font-family:var(--font-mono);font-size:11px;min-width:90px">SOAServer2</span><div class="hv-bar-track"><div class="hv-bar-fill" style="width:71%;background:#f97316"></div></div><span style="font-family:var(--font-mono);font-size:10px;color:#f97316">71%</span></div>
+          <div class="hv-node-row"><span style="font-family:var(--font-mono);font-size:11px;min-width:90px">OSBServer1</span><div class="hv-bar-track"><div class="hv-bar-fill" style="width:45%;background:#22c55e"></div></div><span style="font-family:var(--font-mono);font-size:10px;color:#22c55e">45%</span></div>
+          <div class="hv-node-row"><span style="font-family:var(--font-mono);font-size:11px;min-width:90px">AdminServer</span><div class="hv-bar-track"><div class="hv-bar-fill" style="width:38%;background:#22c55e"></div></div><span style="font-family:var(--font-mono);font-size:10px;color:#22c55e">38%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-cell"><div class="stat-num">70%</div><div class="stat-label">Faster incident diagnosis</div></div>
+  <div class="stat-cell"><div class="stat-num">10+</div><div class="stat-label">Monitoring modules</div></div>
+  <div class="stat-cell"><div class="stat-num">30s</div><div class="stat-label">WLST metric polling interval</div></div>
+  <div class="stat-cell"><div class="stat-num">24/7</div><div class="stat-label">Scheduled log analysis</div></div>
+</div>
+
+<!-- WHY PULSE -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start">
+      <div>
+        <div class="section-label">Why Pulse Monitor</div>
+        <h2>One screen for the entire middleware stack</h2>
+        <p class="mt-16">Managing Oracle Fusion Middleware means juggling multiple consoles — WebLogic Admin, SOA Suite, OSB, EM — with no single view of health, faults, or deployments.</p>
+        <p class="mt-12">Pulse Monitor aggregates it all. WLST scripts collect metrics every 30 seconds. The scheduler analyzes logs overnight. Alerts fire before users notice problems.</p>
+        <a href="features.html" class="btn btn-outline mt-24">See all features →</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <div class="feature-list-item animate-up">
+          <div class="fli-icon icon-blue"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <div><div class="fli-title">Unified live dashboard</div><div class="fli-desc">All server KPIs — RAM, heap, threads, requests — on one screen, refreshed via WLST every 30 seconds.</div></div>
+        </div>
+        <div class="feature-list-item animate-up delay-1">
+          <div class="fli-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div><div class="fli-title">Qiyara AI chatbot</div><div class="fli-desc">Natural language queries over Pulse metadata. Ask about server health, faults, or upcoming cert expiry.</div></div>
+        </div>
+        <div class="feature-list-item animate-up delay-2">
+          <div class="fli-icon icon-teal"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div><div class="fli-title">SOA/OSB deployment workflows</div><div class="fli-desc">Build, deploy, and audit composites across SIT/UAT/PROD with full Git and WLST integration.</div></div>
+        </div>
+        <div class="feature-list-item animate-up delay-3">
+          <div class="fli-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div><div class="fli-title">Smart alerts before outages</div><div class="fli-desc">Configurable rules for stuck threads, JDBC pool pressure, JMS backlog, and certificate expiry.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIME SAVINGS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-label">Time savings</div>
+      <h2>Stop context-switching. Start resolving faster.</h2>
+      <p style="margin:10px auto 0;max-width:480px;">Manual middleware operations eat hours every week. Pulse Monitor puts it all in one place.</p>
+    </div>
+    <div class="grid-4 mt-32">
+      <div class="card animate-up">
+        <div style="font-family:var(--font-display);font-size:40px;font-weight:300;color:var(--teal);line-height:1">25→3</div>
+        <div style="font-size:11px;font-family:var(--font-mono);color:var(--text-muted);margin:4px 0 10px">minutes</div>
+        <h4>Incident diagnosis</h4>
+        <p style="font-size:13px;margin-top:6px;">Stuck threads, node faults — WLST metrics surface instantly, no console login needed.</p>
+      </div>
+      <div class="card animate-up delay-1">
+        <div style="font-family:var(--font-display);font-size:40px;font-weight:300;color:var(--teal);line-height:1">40→5</div>
+        <div style="font-size:11px;font-family:var(--font-mono);color:var(--text-muted);margin:4px 0 10px">minutes</div>
+        <h4>SOA deployment</h4>
+        <p style="font-size:13px;margin-top:6px;">Build, package, deploy, and verify a composite to UAT in one workflow with full audit trail.</p>
+      </div>
+      <div class="card animate-up delay-2">
+        <div style="font-family:var(--font-display);font-size:40px;font-weight:300;color:var(--teal);line-height:1">60→2</div>
+        <div style="font-size:11px;font-family:var(--font-mono);color:var(--text-muted);margin:4px 0 10px">minutes</div>
+        <h4>Cert auditing</h4>
+        <p style="font-size:13px;margin-top:6px;">Scheduler scans all trust stores. Flags certs expiring in &lt;15 days on the dashboard automatically.</p>
+      </div>
+      <div class="card animate-up delay-3">
+        <div style="font-family:var(--font-display);font-size:40px;font-weight:300;color:var(--teal);line-height:1">~10h</div>
+        <div style="font-size:11px;font-family:var(--font-mono);color:var(--text-muted);margin:4px 0 10px">per week</div>
+        <h4>Total hours recovered</h4>
+        <p style="font-size:13px;margin-top:6px;">Across incident response, deployments, cert checks, and log triage per middleware team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE HIGHLIGHTS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Feature highlights</div>
+      <h2>Built for every part of the FMW lifecycle</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card animate-up">
+        <div class="card-icon icon-blue"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <h4>Live dashboard</h4>
+        <p style="font-size:13px;margin-top:6px;">RAM, heap, stuck threads, JDBC status, 24-hr endpoint traffic — all from a single view.</p>
+        <a href="features.html" style="font-size:12px;color:var(--teal);display:inline-flex;align-items:center;gap:4px;margin-top:14px;">Learn more →</a>
+      </div>
+      <div class="card animate-up delay-1">
+        <div class="card-icon icon-teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h4>SOA composite monitoring</h4>
+        <p style="font-size:13px;margin-top:6px;">Composite list, fault counts, lifecycle states, and instance details across all clusters.</p>
+        <a href="modules.html" style="font-size:12px;color:var(--teal);display:inline-flex;align-items:center;gap:4px;margin-top:14px;">Learn more →</a>
+      </div>
+      <div class="card animate-up delay-2">
+        <div class="card-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h4>AI chatbot — Qiyara</h4>
+        <p style="font-size:13px;margin-top:6px;">Ask Qiyara about faults, health, or deployments. Powered by LangChain4j over Pulse metadata.</p>
+        <a href="features.html#ai" style="font-size:12px;color:var(--teal);display:inline-flex;align-items:center;gap:4px;margin-top:14px;">Learn more →</a>
+      </div>
+      <div class="card animate-up">
+        <div class="card-icon icon-coral"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h4>SOA/OSB deployments</h4>
+        <p style="font-size:13px;margin-top:6px;">Full deploy pipeline — build, package via Git/FTP, WLST deploy, and build audit API.</p>
+        <a href="modules.html#deploy" style="font-size:12px;color:var(--teal);display:inline-flex;align-items:center;gap:4px;margin-top:14px;">Learn more →</a>
+      </div>
+      <div class="card animate-up delay-1">
+        <div class="card-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+        <h4>Log review &amp; AI analytics</h4>
+        <p style="font-size:13px;margin-top:6px;">Scheduler-driven ingestion with AI pattern detection for faults, slow queries, and anomalies.</p>
+        <a href="features.html#logs" style="font-size:12px;color:var(--teal);display:inline-flex;align-items:center;gap:4px;margin-top:14px;">Learn more →</a>
+      </div>
+      <div class="card animate-up delay-2">
+        <div class="card-icon icon-green"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8M12 3v4"/></svg></div>
+        <h4>Certificate tracker</h4>
+        <p style="font-size:13px;margin-top:6px;">Automated trust-store scanning with KPI badge for certs expiring in under 15 days.</p>
+        <a href="features.html#certs" style="font-size:12px;color:var(--teal);display:inline-flex;align-items:center;gap:4px;margin-top:14px;">Learn more →</a>
+      </div>
+    </div>
+    <div class="mt-32 text-center">
+      <a href="features.html" class="btn btn-outline">View all features</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--teal);padding:56px 0;">
+  <div class="container text-center">
+    <h2 style="color:white;font-size:28px;">Ready to simplify your FMW operations?</h2>
+    <p style="color:rgba(255,255,255,.75);max-width:440px;margin:12px auto 0;font-size:15px;">Deploy Pulse Monitor to your WebLogic domain — one WAR, all environments, zero agents.</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px;">
+      <a href="contact.html" class="btn btn-white">Get started</a>
+      <a href="how-it-works.html" class="btn" style="color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.3);padding:10px 22px;">How it works</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Pulse Monitor
+        </div>
+        <p>Enterprise monitoring for Oracle Fusion Middleware. Built for WebLogic operations teams.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <a href="features.html">Features</a>
+        <a href="modules.html">Modules</a>
+        <a href="how-it-works.html">How it works</a>
+        <a href="technology.html">Technology</a>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <a href="technology.html">WebLogic 12c</a>
+        <a href="technology.html">SOA Suite</a>
+        <a href="technology.html">OSB</a>
+        <a href="technology.html">Oracle DB</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html">Request access</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Pulse Monitor · FMW Monitoring</p>
+      <div class="footer-tags">
+        <span class="footer-tag">Java EE 8</span>
+        <span class="footer-tag">WebLogic 12c</span>
+        <span class="footer-tag">WLST</span>
+        <span class="footer-tag">AI-powered</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

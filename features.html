@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — Pulse Monitor</title>
+  <meta name="description" content="All features of Pulse Monitor: live dashboards, SOA composites, alerts, log analytics, AI chatbot, certificate tracking, and deployment workflows." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230891b2'/><path d='M8 22 L13 14 L17 18 L21 10 L26 10' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      Pulse Monitor
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="how-it-works.html" class="nav-link">How it works</a>
+      <a href="modules.html" class="nav-link">Modules</a>
+      <a href="technology.html" class="nav-link">Technology</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta btn">Request access</a>
+    <button class="nav-mobile-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-badge"><span class="badge badge-blue">All features</span></div>
+    <h1>Built for every layer of Oracle FMW</h1>
+    <p>Nine core monitoring and operations modules that replace manual WebLogic console work with a single, always-on dashboard.</p>
+    <div class="page-hero-actions">
+      <a href="how-it-works.html" class="btn btn-primary">How it works</a>
+      <a href="modules.html" class="btn btn-outline">View modules</a>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE MONITORING -->
+<section class="section" id="dashboard">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+      <div>
+        <div class="section-label">Core monitoring</div>
+        <h2>Live server &amp; node dashboard</h2>
+        <p class="mt-16">WLST Python scripts connect to the WebLogic admin server every 30 seconds and collect metrics for every managed server node in the cluster.</p>
+        <p class="mt-12">The dashboard surfaces RAM usage, heap pressure, stuck thread counts, active requests, and node lifecycle states — without any agent installation.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:24px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0"></div>
+            <span style="font-size:13px;color:var(--text-secondary)">All nodes: RAM, heap, free heap, stuck threads, active requests</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0"></div>
+            <span style="font-size:13px;color:var(--text-secondary)">24-hour request traffic chart — peak vs off-peak windows</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0"></div>
+            <span style="font-size:13px;color:var(--text-secondary)">Endpoint metrics from access log analysis (last 24 hr)</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0"></div>
+            <span style="font-size:13px;color:var(--text-secondary)">Historical snapshots in PULSE_SERVER_STATUS_LOG for time-series</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0"></div>
+            <span style="font-size:13px;color:var(--text-secondary)">Cached metrics for instant page load with live fallback</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="card" style="background:var(--surface);">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+            <span style="font-size:12px;font-weight:500;color:var(--text-primary)">Node resource monitor</span>
+            <span class="badge badge-teal">POLLING 30s</span>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Node</th><th>Status</th><th>RAM</th><th>Heap</th><th>Stuck</th></tr></thead>
+              <tbody>
+                <tr><td><span class="mono">SOAServer1</span></td><td><span class="badge badge-teal"><span class="badge-dot"></span>Running</span></td><td>68%</td><td>3.2 GB</td><td>0</td></tr>
+                <tr><td><span class="mono">SOAServer2</span></td><td><span class="badge badge-teal"><span class="badge-dot"></span>Running</span></td><td>71%</td><td>3.8 GB</td><td>0</td></tr>
+                <tr><td><span class="mono">OSBServer1</span></td><td><span class="badge badge-amber"><span class="badge-dot"></span>Warning</span></td><td>84%</td><td>4.1 GB</td><td>2</td></tr>
+                <tr><td><span class="mono">AdminServer</span></td><td><span class="badge badge-teal"><span class="badge-dot"></span>Running</span></td><td>38%</td><td>1.4 GB</td><td>0</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALERTS -->
+<section class="section section-alt" id="alerts">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="card">
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <div class="card-icon icon-amber" style="margin-bottom:0"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:3px">High faulted instances — UtilityBatchProcessor</div>
+              <div style="font-size:12px;color:var(--text-secondary)">7 faults in last 24hr · Threshold: 5 · PROD-SOA-Cluster</div>
+              <span class="badge badge-amber" style="margin-top:8px;">Critical</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <div class="card-icon icon-blue" style="margin-bottom:0"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:3px">JDBC pool near limit — CCBJDE-CCBDS</div>
+              <div style="font-size:12px;color:var(--text-secondary)">Pool usage 87% · Threshold: 80% · DBA notified</div>
+              <span class="badge badge-blue" style="margin-top:8px;">Warning</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <div class="card-icon icon-green" style="margin-bottom:0"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:3px">Stuck thread cleared — PROD-OSB-Server1</div>
+              <div style="font-size:12px;color:var(--text-secondary)">Resolved 11:47 · Duration 4 min · Auto-cleared</div>
+              <span class="badge badge-teal" style="margin-top:8px;">Resolved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">Alerting</div>
+        <h2>Configurable alerts before users notice</h2>
+        <p class="mt-16">Define alert types and thresholds for your environment. Pulse fires notifications via JMS queue so they reach your operations team through existing notification channels.</p>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:24px;">
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+            <div style="width:8px;height:8px;border-radius:50%;background:#e24b4a;flex-shrink:0"></div>
+            <span style="font-size:13px;color:var(--text-secondary)">Stuck threads exceeding threshold</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+            <div style="width:8px;height:8px;border-radius:50%;background:#f97316;flex-shrink:0"></div>
+            <span style="font-size:13px;color:var(--text-secondary)">JDBC connection pool pressure</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+            <div style="width:8px;height:8px;border-radius:50%;background:#f97316;flex-shrink:0"></div>
+            <span style="font-size:13px;color:var(--text-secondary)">JMS queue backlog accumulation</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+            <div style="width:8px;height:8px;border-radius:50%;background:#ba7517;flex-shrink:0"></div>
+            <span style="font-size:13px;color:var(--text-secondary)">Certificate expiry within 15 days</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+            <div style="width:8px;height:8px;border-radius:50%;background:#e24b4a;flex-shrink:0"></div>
+            <span style="font-size:13px;color:var(--text-secondary)">SOA composite fault count exceeded</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+            <div style="width:8px;height:8px;border-radius:50%;background:#1d9e75;flex-shrink:0"></div>
+            <span style="font-size:13px;color:var(--text-secondary)">Unreachable API endpoint detected</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOG ANALYTICS & AI -->
+<section class="section" id="logs">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-label">Log analytics &amp; AI</div>
+      <h2>From raw log files to actionable insight</h2>
+      <p style="margin:10px auto 0;max-width:500px;">The log analysis scheduler runs overnight. Qiyara AI surfaces patterns automatically — no grep required.</p>
+    </div>
+    <div class="grid-3 mt-40">
+      <div class="card animate-up">
+        <div class="card-icon icon-blue"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h4>Scheduled log ingestion</h4>
+        <p style="font-size:13px;margin-top:6px;">Access logs, diagnostic logs, and integration logs are ingested by the ESS scheduler into PULSE_LOG_ANALYSIS_DATA for reporting and pattern detection.</p>
+      </div>
+      <div class="card animate-up delay-1">
+        <div class="card-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h4>Qiyara AI chatbot</h4>
+        <p style="font-size:13px;margin-top:6px;">Natural language interface over Pulse metadata. Powered by LangChain4j. Ask "which composites had faults today?" or "is my cert about to expire?"</p>
+        <span class="badge badge-purple" style="margin-top:12px;">LangChain4j · LLM</span>
+      </div>
+      <div class="card animate-up delay-2">
+        <div class="card-icon icon-amber"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        <h4>AI-based pattern detection</h4>
+        <p style="font-size:13px;margin-top:6px;">AI analytics identifies recurring faults, slow query patterns, and anomalies across integration logs — then surfaces them with suggested remediation hints.</p>
+      </div>
+    </div>
+    <div class="mt-32" style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;">
+      <div style="font-size:12px;font-weight:500;color:var(--text-muted);font-family:var(--font-mono);margin-bottom:16px;">AI ANALYTICS SAMPLE OUTPUT</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="padding:12px 16px;background:white;border-radius:var(--radius-md);border-left:3px solid #e24b4a;">
+          <div style="font-size:13px;font-weight:500;color:#791f1f;margin-bottom:3px;">Recurring fault detected</div>
+          <div style="font-size:12px;color:var(--text-secondary);">UtilityBatchProcessor · NullPointerException in PaymentAdaptor · 7 occurrences · suggest reviewing PaymentAdaptor.java:142</div>
+        </div>
+        <div style="padding:12px 16px;background:white;border-radius:var(--radius-md);border-left:3px solid #ba7517;">
+          <div style="font-size:13px;font-weight:500;color:#854f0b;margin-bottom:3px;">Slow query pattern</div>
+          <div style="font-size:12px;color:var(--text-secondary);">CCBJDE-CCBDS · avg 4.2s response on SELECT queries · consider index review on CUSTOMER_TXN table</div>
+        </div>
+        <div style="padding:12px 16px;background:white;border-radius:var(--radius-md);border-left:3px solid #1d9e75;">
+          <div style="font-size:13px;font-weight:500;color:#0f6e56;margin-bottom:3px;">All clear — other composites</div>
+          <div style="font-size:12px;color:var(--text-secondary);">No anomalies detected in remaining 20 composites over last 24 hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section class="section section-alt" id="certs">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+      <div>
+        <div class="section-label">Certificate tracker</div>
+        <h2>Never be surprised by an expired cert again</h2>
+        <p class="mt-16">The scheduler scans all configured trust store paths across every environment. It records each certificate's alias, subject DN, validity window, and days remaining.</p>
+        <p class="mt-12">Certificates expiring in under 15 days surface as a KPI badge on the main dashboard. The full tracker shows every cert across every system with search and pagination.</p>
+        <div style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;">
+          <div style="text-align:center;padding:16px 20px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+            <div style="font-family:var(--font-display);font-size:28px;font-weight:300;color:var(--teal)">16</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:3px;">Total certs tracked</div>
+          </div>
+          <div style="text-align:center;padding:16px 20px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+            <div style="font-family:var(--font-display);font-size:28px;font-weight:300;color:#e24b4a">1</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:3px;">Expiring &lt;15 days</div>
+          </div>
+          <div style="text-align:center;padding:16px 20px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+            <div style="font-family:var(--font-display);font-size:28px;font-weight:300;color:#1d9e75">12</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:3px;">Healthy (&gt;60 days)</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:12px;font-weight:500;color:var(--text-primary);margin-bottom:14px;">Trust store certificates</div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>System</th><th>Certificate</th><th>Expires</th><th>Days left</th></tr></thead>
+            <tbody>
+              <tr><td>PROD-SOA</td><td><span class="mono">prod-root-ca</span></td><td>14 Aug 2026</td><td style="color:#1d9e75;font-weight:500">111</td></tr>
+              <tr><td>PROD-OSB</td><td><span class="mono">osb-server-cert</span></td><td>29 Jun 2026</td><td style="color:#1d9e75;font-weight:500">65</td></tr>
+              <tr><td>UAT-SOA</td><td><span class="mono">uat-root-ca</span></td><td>6 May 2026</td><td style="color:#e24b4a;font-weight:500">11</td></tr>
+              <tr><td>SIT</td><td><span class="mono">sit-dev-cert</span></td><td>12 May 2026</td><td style="color:#ba7517;font-weight:500">17</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- API TRACKER -->
+<section class="section" id="api">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">API dependency tracker</div>
+      <h2>Map and monitor every API integration</h2>
+      <p>Swagger-backed API catalog with dependency hierarchy, reachability checks, and API hub — so you know the blast radius before deploying or decommissioning a service.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card animate-up">
+        <div class="card-icon icon-teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="3" cy="6" r="2"/><circle cx="21" cy="6" r="2"/><circle cx="3" cy="18" r="2"/><circle cx="21" cy="18" r="2"/><line x1="5" y1="6" x2="10" y2="11"/><line x1="14" y1="13" x2="19" y2="8"/><line x1="5" y1="18" x2="10" y2="13"/><line x1="14" y1="11" x2="19" y2="16"/></svg></div>
+        <h4>Dependency hierarchy</h4>
+        <p style="font-size:13px;margin-top:6px;">Visual tree of which services depend on which APIs. Know downstream impact before any change.</p>
+      </div>
+      <div class="card animate-up delay-1">
+        <div class="card-icon icon-blue"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>Reachability checks</h4>
+        <p style="font-size:13px;margin-top:6px;">Scheduled pings verify each registered API endpoint. Unreachable APIs are surfaced in the JMS notification dashboard.</p>
+      </div>
+      <div class="card animate-up delay-2">
+        <div class="card-icon icon-coral"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h4>Swagger / API hub</h4>
+        <p style="font-size:13px;margin-top:6px;">Built-in Swagger document viewer and API hub — browse, preview, and share API specs across teams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-label">Security</div>
+      <h2>Enterprise-grade request hardening</h2>
+      <p style="margin:10px auto 0;max-width:500px;">Centralised security controls across every route and API action.</p>
+    </div>
+    <div class="grid-4 mt-32">
+      <div class="card text-center animate-up">
+        <div class="card-icon icon-blue" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <h4>CSRF protection</h4>
+        <p style="font-size:12px;margin-top:6px;">Synchronizer token validation for all mutating requests via CsrfFilter.</p>
+      </div>
+      <div class="card text-center animate-up delay-1">
+        <div class="card-icon icon-teal" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>TLS enforcement</h4>
+        <p style="font-size:12px;margin-top:6px;">HSTS headers and TLS-only flag via TlsEnforcementFilter + SecurityHeadersFilter.</p>
+      </div>
+      <div class="card text-center animate-up delay-2">
+        <div class="card-icon icon-amber" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h4>Menu RBAC</h4>
+        <p style="font-size:12px;margin-top:6px;">Path-to-menu authorization via PulseMenuPathAuthorization and MenuAuthorizationFilter.</p>
+      </div>
+      <div class="card text-center animate-up delay-3">
+        <div class="card-icon icon-purple" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <h4>Rate limiting</h4>
+        <p style="font-size:12px;margin-top:6px;">RateLimitFilter protects all endpoints from excessive request volumes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--teal);padding:56px 0;">
+  <div class="container text-center">
+    <h2 style="color:white;">Explore the full feature set</h2>
+    <p style="color:rgba(255,255,255,.75);max-width:400px;margin:12px auto 0;">See all modules, the deployment architecture, and the full technology stack.</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px;">
+      <a href="modules.html" class="btn btn-white">Browse modules</a>
+      <a href="contact.html" class="btn" style="color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.3);padding:10px 22px;">Request access</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><div class="footer-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Pulse Monitor</div>
+        <p>Enterprise monitoring for Oracle Fusion Middleware. Built for WebLogic operations teams.</p>
+      </div>
+      <div class="footer-col"><h5>Product</h5><a href="features.html">Features</a><a href="modules.html">Modules</a><a href="how-it-works.html">How it works</a><a href="technology.html">Technology</a></div>
+      <div class="footer-col"><h5>Platform</h5><a href="technology.html">WebLogic 12c</a><a href="technology.html">SOA Suite</a><a href="technology.html">OSB</a><a href="technology.html">Oracle DB</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="contact.html">Contact</a><a href="contact.html">Request access</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Pulse Monitor · FMW Monitoring</p>
+      <div class="footer-tags"><span class="footer-tag">Java EE 8</span><span class="footer-tag">WebLogic 12c</span><span class="footer-tag">WLST</span><span class="footer-tag">AI-powered</span></div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

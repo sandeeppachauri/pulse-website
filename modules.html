@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modules — Pulse Monitor</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230891b2'/><path d='M8 22 L13 14 L17 18 L21 10 L26 10' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      Pulse Monitor
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="how-it-works.html" class="nav-link">How it works</a>
+      <a href="modules.html" class="nav-link">Modules</a>
+      <a href="technology.html" class="nav-link">Technology</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta btn">Request access</a>
+    <button class="nav-mobile-toggle" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-badge"><span class="badge badge-blue">10+ modules</span></div>
+    <h1>Every module your middleware team needs</h1>
+    <p>Monitoring, alerting, deployment, analytics, and AI — all accessible from a single application context root.</p>
+  </div>
+</section>
+
+<div class="stats-strip">
+  <div class="stat-cell"><div class="stat-num">10+</div><div class="stat-label">Application modules</div></div>
+  <div class="stat-cell"><div class="stat-num">5</div><div class="stat-label">JPA persistence units</div></div>
+  <div class="stat-cell"><div class="stat-num">30+</div><div class="stat-label">REST / servlet endpoints</div></div>
+  <div class="stat-cell"><div class="stat-num">4</div><div class="stat-label">Deployment environments</div></div>
+</div>
+
+<!-- MODULE 1: MONITORING -->
+<section class="section" id="monitoring">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;">
+      <div style="text-align:center;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);">
+        <div style="width:56px;height:56px;background:var(--sky);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--navy-light)" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <div style="font-size:14px;font-weight:500;color:var(--text-primary)">Monitoring</div>
+        <span class="badge badge-blue" style="margin-top:8px;">WLST</span>
+      </div>
+      <div>
+        <h3>Server &amp; node monitoring</h3>
+        <p class="mt-12">The core of Pulse Monitor. WLST Python scripts bundled inside the WAR connect to the WebLogic admin server, walk the domain, and collect node-level metrics — without any external agent.</p>
+        <div class="grid-3 mt-24">
+          <div class="card"><h4 style="font-size:13px;">Live dashboard</h4><p style="font-size:12px;margin-top:5px;">RAM, heap, stuck threads, active requests, lifecycle state per node. Refreshed every 30s.</p><div class="mono mt-8">/dashboard</div></div>
+          <div class="card"><h4 style="font-size:13px;">Server details</h4><p style="font-size:12px;margin-top:5px;">Deep-dive per server: WLST-backed views of all server attributes and runtime state.</p><div class="mono mt-8">/serverDetails</div></div>
+          <div class="card"><h4 style="font-size:13px;">JMS queue tracking</h4><p style="font-size:12px;margin-top:5px;">Queue depth, consumer counts, and message throughput via WLST JMS runtime MBeans.</p><div class="mono mt-8">/jmsQueueTracking</div></div>
+          <div class="card"><h4 style="font-size:13px;">JDBC data sources</h4><p style="font-size:12px;margin-top:5px;">Connection pool size, waiters, leaked connections, and health status per data source.</p><div class="mono mt-8">/dataSource</div></div>
+          <div class="card"><h4 style="font-size:13px;">On-demand reporting</h4><p style="font-size:12px;margin-top:5px;">Generate custom metric reports on demand for any server or time range.</p><div class="mono mt-8">/OnDemandReport</div></div>
+          <div class="card"><h4 style="font-size:13px;">Status log history</h4><p style="font-size:12px;margin-top:5px;">Metric snapshots persisted to PULSE_SERVER_STATUS_LOG for time-series dashboards.</p><div class="mono mt-8">PULSE_SERVER_STATUS_LOG</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);" />
+
+<!-- MODULE 2: SOA -->
+<section class="section section-alt" id="soa">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;">
+      <div style="text-align:center;padding:24px;background:white;border:1px solid var(--border);border-radius:var(--radius-lg);">
+        <div style="width:56px;height:56px;background:#e1f5ee;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0f6e56" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <div style="font-size:14px;font-weight:500;color:var(--text-primary)">SOA composites</div>
+        <span class="badge badge-teal" style="margin-top:8px;">SOA Suite</span>
+      </div>
+      <div>
+        <h3>SOA composite monitoring</h3>
+        <p class="mt-12">Query the SOA infrastructure database directly via the <strong>SOAPU</strong> persistence unit. View all deployed composites, their revision states, fault counts, and instance details — without logging into EM.</p>
+        <div class="grid-3 mt-24">
+          <div class="card"><h4 style="font-size:13px;">Composite list</h4><p style="font-size:12px;margin-top:5px;">All composites with partition, revision, lifecycle state, and fault count at a glance.</p><div class="mono mt-8">/composites</div></div>
+          <div class="card"><h4 style="font-size:13px;">Composite detail</h4><p style="font-size:12px;margin-top:5px;">Drill into a specific composite — binding components, service endpoints, recent faults.</p><div class="mono mt-8">/compositeDetails</div></div>
+          <div class="card"><h4 style="font-size:13px;">Utility integration</h4><p style="font-size:12px;margin-top:5px;">Utility batch integration jobs and outbound C2M detail views with instance tracking.</p><div class="mono mt-8">/utility_integration</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);" />
+
+<!-- MODULE 3: ALERTS -->
+<section class="section" id="alerts">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;">
+      <div style="text-align:center;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);">
+        <div style="width:56px;height:56px;background:#faeeda;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#854f0b" stroke-width="1.6"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div style="font-size:14px;font-weight:500;color:var(--text-primary)">Alerts</div>
+        <span class="badge badge-amber" style="margin-top:8px;">Rules engine</span>
+      </div>
+      <div>
+        <h3>Alerts &amp; configuration</h3>
+        <p class="mt-12">Define alert types, thresholds, and notification targets. Alerts fire via JMS and appear in the dashboard notification panel — no email relay required.</p>
+        <div class="grid-3 mt-24">
+          <div class="card"><h4 style="font-size:13px;">Manage alerts</h4><p style="font-size:12px;margin-top:5px;">Create, edit, and delete alert rules. Set thresholds per system and alert type.</p><div class="mono mt-8">/ManageAlerts</div></div>
+          <div class="card"><h4 style="font-size:13px;">View alerts</h4><p style="font-size:12px;margin-top:5px;">Active and resolved alert history. Filter by system, severity, or alert type.</p><div class="mono mt-8">/ViewAlerts</div></div>
+          <div class="card"><h4 style="font-size:13px;">Alert type config</h4><p style="font-size:12px;margin-top:5px;">Configure available alert categories and their default severity levels.</p><div class="mono mt-8">/AlertTypeConfig</div></div>
+          <div class="card"><h4 style="font-size:13px;">System parameters</h4><p style="font-size:12px;margin-top:5px;">Global system parameter management — polling intervals, retention periods, etc.</p><div class="mono mt-8">/SystemParameters</div></div>
+          <div class="card"><h4 style="font-size:13px;">Application config</h4><p style="font-size:12px;margin-top:5px;">Manage registered server systems, INFRA_HEALTH_CHECK flags, trust store paths.</p><div class="mono mt-8">/ApplicationConfiguration.jsp</div></div>
+          <div class="card"><h4 style="font-size:13px;">JMS notifications</h4><p style="font-size:12px;margin-top:5px;">Dashboard notification panel — unread count badge, message detail overlay.</p><div class="mono mt-8">/dashboard/jms/notifications</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);" />
+
+<!-- MODULE 4: DEPLOYMENT -->
+<section class="section section-alt" id="deploy">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;">
+      <div style="text-align:center;padding:24px;background:white;border:1px solid var(--border);border-radius:var(--radius-lg);">
+        <div style="width:56px;height:56px;background:#faece7;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#993c1d" stroke-width="1.6"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div style="font-size:14px;font-weight:500;color:var(--text-primary)">Deployment</div>
+        <span class="badge badge-amber" style="margin-top:8px;">Git · FTP · WLST</span>
+      </div>
+      <div>
+        <h3>SOA/OSB deployment workflows</h3>
+        <p class="mt-12">End-to-end deployment pipeline for SOA composites and OSB services. Supports Git, FTP, and manual artifact paths. Encrypted connection settings. Full build and deployment audit trail.</p>
+        <div class="grid-3 mt-24">
+          <div class="card"><h4 style="font-size:13px;">Deployment dashboard</h4><p style="font-size:12px;margin-top:5px;">Overview of all registered deployment packages, their targets, and recent deploy history.</p><div class="mono mt-8">/SoaOsbDeployment</div></div>
+          <div class="card"><h4 style="font-size:13px;">Build &amp; deploy</h4><p style="font-size:12px;margin-top:5px;">Trigger a build from Git source, package artifacts, then deploy to target environment via WLST.</p><div class="mono mt-8">Execute workflow</div></div>
+          <div class="card"><h4 style="font-size:13px;">Build audit API</h4><p style="font-size:12px;margin-top:5px;">REST API for CI/CD integration. Query build outcomes and deployment status programmatically.</p><div class="mono mt-8">/api/soa-osb/build-audit</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);" />
+
+<!-- MODULE 5: AI & LOGS -->
+<section class="section" id="ai">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;">
+      <div style="text-align:center;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);">
+        <div style="width:56px;height:56px;background:#eeedfe;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#534ab7" stroke-width="1.6"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div style="font-size:14px;font-weight:500;color:var(--text-primary)">AI &amp; analytics</div>
+        <span class="badge badge-purple" style="margin-top:8px;">LangChain4j</span>
+      </div>
+      <div>
+        <h3>AI chatbot, log analytics &amp; API tracking</h3>
+        <p class="mt-12">The Qiyara AI assistant, AI-based log analytics, integration log review, and API dependency tracker — the intelligence layer of Pulse Monitor.</p>
+        <div class="grid-3 mt-24">
+          <div class="card"><h4 style="font-size:13px;">Qiyara chatbot</h4><p style="font-size:12px;margin-top:5px;">Natural language queries. Async servlet. Model info ping. Suggested queries widget.</p><div class="mono mt-8">/chatbot</div></div>
+          <div class="card"><h4 style="font-size:13px;">AI log analytics</h4><p style="font-size:12px;margin-top:5px;">Pattern detection across ingested integration logs. Fault clustering and anomaly highlighting.</p><div class="mono mt-8">/AiBasedAnalytics</div></div>
+          <div class="card"><h4 style="font-size:13px;">Integration log review</h4><p style="font-size:12px;margin-top:5px;">Browse scheduler-ingested log analysis records. Filter by system, date range, and error type.</p><div class="mono mt-8">/IntegrationLogReview</div></div>
+          <div class="card"><h4 style="font-size:13px;">API dependency tracker</h4><p style="font-size:12px;margin-top:5px;">Register and monitor API dependencies with reachability checks and hierarchy views.</p><div class="mono mt-8">/ApiDependencyTracker</div></div>
+          <div class="card"><h4 style="font-size:13px;">Swagger / API hub</h4><p style="font-size:12px;margin-top:5px;">Built-in Swagger document browser and API preview for all registered services.</p><div class="mono mt-8">/swaggerDocument</div></div>
+          <div class="card"><h4 style="font-size:13px;">ESS schedulers</h4><p style="font-size:12px;margin-top:5px;">View and manage Oracle ESS scheduler jobs — log analysis, cert scan, API ping jobs.</p><div class="mono mt-8">/schedulers</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--teal);padding:56px 0;">
+  <div class="container text-center">
+    <h2 style="color:white;">All modules. One deployment.</h2>
+    <p style="color:rgba(255,255,255,.75);max-width:420px;margin:12px auto 0;">A single WAR on your WebLogic server unlocks the full capability of Pulse Monitor across all environments.</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px;">
+      <a href="contact.html" class="btn btn-white">Get started</a>
+      <a href="how-it-works.html" class="btn" style="color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.3);padding:10px 22px;">Deployment guide</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Pulse Monitor</div><p>Enterprise monitoring for Oracle Fusion Middleware.</p></div>
+      <div class="footer-col"><h5>Product</h5><a href="features.html">Features</a><a href="modules.html">Modules</a><a href="how-it-works.html">How it works</a><a href="technology.html">Technology</a></div>
+      <div class="footer-col"><h5>Platform</h5><a href="technology.html">WebLogic 12c</a><a href="technology.html">SOA Suite</a><a href="technology.html">OSB</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="contact.html">Contact</a><a href="contact.html">Request access</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Pulse Monitor</p><div class="footer-tags"><span class="footer-tag">Java EE 8</span><span class="footer-tag">WebLogic 12c</span><span class="footer-tag">AI-powered</span></div></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
