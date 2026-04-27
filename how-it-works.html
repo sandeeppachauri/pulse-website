@@ -31,8 +31,8 @@
 <section class="page-hero">
   <div class="container">
     <div class="page-hero-badge"><span class="badge badge-teal">Architecture</span></div>
-    <h1>From WebLogic domain to insight in seconds</h1>
-    <p>A lightweight WAR on WebLogic. WLST scripts collect metrics. A scheduler processes logs. No agents, no cloud dependency, no extra infrastructure.</p>
+    <h1>Configure once. Track everything, always.</h1>
+    <p>Connect your servers, message brokers, APIs, databases, and log sources once. Pulse Monitor continuously monitors all of them — across every environment — with polling intervals, alert thresholds, and scheduler jobs all tuned to your load and team.</p>
   </div>
 </section>
 
@@ -47,18 +47,18 @@
       <div style="position:absolute;top:28px;left:10%;right:10%;height:1px;background:var(--sky-mid);z-index:0"></div>
       <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;z-index:1;">
         <div style="width:56px;height:56px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;color:white;font-family:var(--font-display);font-size:20px;font-weight:300;">1</div>
-        <div style="margin-top:14px;font-size:13px;font-weight:500;color:var(--text-primary)">WebLogic domain</div>
-        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;line-height:1.5">Admin server, managed servers, SOA &amp; OSB clusters</div>
+        <div style="margin-top:14px;font-size:13px;font-weight:500;color:var(--text-primary)">Your servers &amp; systems</div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;line-height:1.5">Any combination of app servers, message brokers, databases, and APIs</div>
       </div>
       <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;z-index:1;">
         <div style="width:56px;height:56px;border-radius:50%;background:var(--navy-light);display:flex;align-items:center;justify-content:center;color:white;font-family:var(--font-display);font-size:20px;font-weight:300;">2</div>
-        <div style="margin-top:14px;font-size:13px;font-weight:500;color:var(--text-primary)">WLST scripts</div>
-        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;line-height:1.5">Python scripts bundled in WAR — run every 30s for live metrics</div>
+        <div style="margin-top:14px;font-size:13px;font-weight:500;color:var(--text-primary)">Metric collectors</div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;line-height:1.5">Scripts bundled in the application — polling interval configurable to your load</div>
       </div>
       <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;z-index:1;">
         <div style="width:56px;height:56px;border-radius:50%;background:#185fa5;display:flex;align-items:center;justify-content:center;color:white;font-family:var(--font-display);font-size:20px;font-weight:300;">3</div>
-        <div style="margin-top:14px;font-size:13px;font-weight:500;color:var(--text-primary)">Oracle DB</div>
-        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;line-height:1.5">Pulse tables store config, alerts, metrics snapshots, log analysis data</div>
+        <div style="margin-top:14px;font-size:13px;font-weight:500;color:var(--text-primary)">Central data store</div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;line-height:1.5">Configuration, alerts, metrics snapshots, and log analysis — all in one place</div>
       </div>
       <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;z-index:1;">
         <div style="width:56px;height:56px;border-radius:50%;background:#0f6e56;display:flex;align-items:center;justify-content:center;color:white;font-family:var(--font-display);font-size:20px;font-weight:300;">4</div>
@@ -80,51 +80,51 @@
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
       <div>
         <div class="section-label">Deployment</div>
-        <h2>One WAR. All environments.</h2>
-        <p class="mt-16">Pulse Monitor ships as a single <strong>pulseMonitor.war</strong> built with Maven. A WebLogic deployment plan and environment-specific properties files handle context root overrides and credentials — no code changes between environments.</p>
-        <p class="mt-12">Build once with the correct Maven profile, then deploy using WebLogic Deployer with the matching plan variables file.</p>
+        <h2>Configure once. Works across all your environments.</h2>
+        <p class="mt-16">Pulse Monitor is deployed as a single application package. Environment-specific settings — server connections, alert thresholds, polling intervals, API keys, and credentials — are all managed through configuration files. No code changes between environments.</p>
+        <p class="mt-12">Connect your servers, message brokers, databases, and APIs once per environment. From that point on, Pulse tracks all of them continuously — automatically adjusting to your load and setup.</p>
         <div style="display:flex;flex-direction:column;gap:8px;margin-top:24px;">
           <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--sky);border:1px solid var(--sky-mid);border-radius:var(--radius-md);">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            <span style="font-size:13px;color:var(--text-secondary)">Build once with the chosen environment profile</span>
+            <span style="font-size:13px;color:var(--text-secondary)">Add your servers, APIs, message brokers, and databases in the configuration screen</span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--sky);border:1px solid var(--sky-mid);border-radius:var(--radius-md);">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            <span style="font-size:13px;color:var(--text-secondary)">Deploy to the target WebLogic server using the matching plan variables</span>
+            <span style="font-size:13px;color:var(--text-secondary)">Set your polling intervals, alert thresholds, and scheduler job cadences to match your load</span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--sky);border:1px solid var(--sky-mid);border-radius:var(--radius-md);">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            <span style="font-size:13px;color:var(--text-secondary)">Pulse Monitor is live — no restart of your SOA or OSB services needed</span>
+            <span style="font-size:13px;color:var(--text-secondary)">Pulse Monitor takes over — continuous monitoring, cross-server search, API tracking, and alerts from that point on</span>
           </div>
         </div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div class="card">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
             <div style="font-size:13px;font-weight:500;color:var(--text-primary)">Local / Dev</div>
-            <span class="badge badge-green">mvn -P local</span>
+            <span class="badge badge-green">Development</span>
           </div>
-          <div style="font-size:12px;color:var(--text-secondary);">Development mode. JSF project stage set to Development. Local weblogic-local.properties.</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Lightweight config for local development. Relaxed thresholds, detailed logging enabled.</div>
         </div>
         <div class="card">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
             <div style="font-size:13px;font-weight:500;color:var(--text-primary)">SIT</div>
-            <span class="badge badge-blue">mvn -P sit</span>
+            <span class="badge badge-blue">System Integration Testing</span>
           </div>
-          <div style="font-size:12px;color:var(--text-secondary);">System integration testing environment. Packaged with weblogic-sit.properties.</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Integration testing environment. Connects to SIT server instances and test message brokers.</div>
         </div>
         <div class="card">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
             <div style="font-size:13px;font-weight:500;color:var(--text-primary)">UAT</div>
-            <span class="badge badge-amber">mvn -P uat</span>
+            <span class="badge badge-amber">User Acceptance Testing</span>
           </div>
-          <div style="font-size:12px;color:var(--text-secondary);">User acceptance testing. Packaged with weblogic-uat.properties.</div>
+          <div style="font-size:12px;color:var(--text-secondary);">UAT environment with production-like monitoring settings for final validation before go-live.</div>
         </div>
         <div class="card" style="border-color:var(--teal)">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
             <div style="font-size:13px;font-weight:500;color:var(--text-primary)">PROD</div>
-            <span class="badge badge-teal">mvn -P prod</span>
+            <span class="badge badge-teal">Production</span>
           </div>
-          <div style="font-size:12px;color:var(--text-secondary);">Production. Secure cookies enforced. weblogic-prod.properties with secrets injected at deploy time.</div>
+          <div style="font-size:12px;color:var(--text-secondary);">Full production monitoring. Tighter alert thresholds, secure connections, and secrets managed outside source control.</div>
         </div>
       </div>
     </div>
