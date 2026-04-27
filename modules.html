@@ -111,6 +111,7 @@
       <a href="#server">Server health</a>
       <a href="#soa">SOA composites</a>
       <a href="#queues">Message queues</a>
+      <a href="#mdb">MDB health</a>
       <a href="#api">API manager</a>
       <a href="#alerts">Alerts</a>
       <a href="#deploy">Deployment</a>
@@ -172,11 +173,11 @@
     <div class="module-sidebar">
       <div class="module-sidebar-icon icon-amber"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
       <h4>Message Queue Monitoring</h4>
-      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">WebLogic JMS</span><span class="cap-pill">Oracle AQ</span><span class="cap-pill">IBM MQ</span><span class="cap-pill">Kafka</span><span class="cap-pill">Dead-letter</span></div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">WebLogic JMS</span><span class="cap-pill">Oracle AQ</span><span class="cap-pill">RabbitMQ</span><span class="cap-pill">Kafka</span><span class="cap-pill">Dead-letter</span></div>
     </div>
     <div>
       <h3>One place to monitor all your message brokers</h3>
-      <p class="mt-12">Message queue backlogs are one of the most common causes of silent failures in enterprise middleware. A queue accumulates messages, no one notices, and eventually a downstream business process stalls. Pulse Monitor gives your team continuous visibility into every messaging destination — across WebLogic JMS, Oracle Advanced Queuing (AQ), IBM MQ, and Kafka — from a single dashboard.</p>
+      <p class="mt-12">Message queue backlogs are one of the most common causes of silent failures in enterprise middleware. A queue accumulates messages, no one notices, and eventually a downstream business process stalls. Pulse Monitor gives your team continuous visibility into every messaging destination — across WebLogic JMS, Oracle Advanced Queuing (AQ), RabbitMQ, and Kafka — from a single dashboard.</p>
       <p class="mt-12">Configurable backlog thresholds trigger alerts the moment any queue starts accumulating messages beyond normal levels — long before the business notices anything wrong.</p>
 
       <!-- Broker types supported -->
@@ -191,7 +192,7 @@
         </div>
         <div style="background:var(--sky);border:1px solid var(--sky-mid);border-radius:var(--radius-md);padding:11px 14px;display:flex;align-items:center;gap:8px;">
           <div style="width:8px;height:8px;border-radius:50%;background:#534ab7;flex-shrink:0;"></div>
-          <div><div style="font-size:12px;font-weight:500;color:var(--navy)">IBM MQ</div><div style="font-size:11px;color:var(--text-muted)">Queue managers, channels</div></div>
+          <div><div style="font-size:12px;font-weight:500;color:var(--navy)">RabbitMQ</div><div style="font-size:11px;color:var(--text-muted)">Queue managers, channels</div></div>
         </div>
         <div style="background:var(--sky);border:1px solid var(--sky-mid);border-radius:var(--radius-md);padding:11px 14px;display:flex;align-items:center;gap:8px;">
           <div style="width:8px;height:8px;border-radius:50%;background:#854f0b;flex-shrink:0;"></div>
@@ -277,6 +278,44 @@
         <div class="benefit-row"><div class="benefit-icon icon-coral"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">Per-queue threshold alerts</div><div class="benefit-desc">Configure independent thresholds per queue type — tighter limits for DLQs, broader for standard processing queues.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="benefit-title">Dashboard notification panel</div><div class="benefit-desc">JMS-delivered alerts appear in the bell panel with message body, headers, and timestamp — no tooling needed.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="benefit-title">Message browse &amp; inspect</div><div class="benefit-desc">View individual message body and metadata directly from the dashboard — ideal for DLQ triage without admin tools.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3b. MDB TRACKER -->
+  <div class="module-block" id="mdb">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+      <h4>MDB Health Tracker</h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">MDB status</span><span class="cap-pill">Listener health</span><span class="cap-pill">JMX-backed</span></div>
+    </div>
+    <div>
+      <h3>Know when a message-driven bean stops listening</h3>
+      <p class="mt-12">Message-Driven Beans are the silent workers of your middleware layer — consuming from queues and topics around the clock. When an MDB pauses, suspends, or loses its connection to its destination, messages pile up and business processes stall, often without any obvious error surfacing in application logs.</p>
+      <p class="mt-12">Pulse Monitor tracks the health and status of every registered MDB across your server cluster via JMX. If a listener goes down or pauses unexpectedly, your team is alerted immediately — not after the queue backlog triggers a business complaint.</p>
+
+      <!-- MDB status sample -->
+      <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:20px 0;">
+        <div style="padding:11px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-size:12px;font-weight:500;color:var(--text-primary);">MDB listener status — PROD-SOA-Cluster</span>
+          <span class="badge badge-teal"><span class="badge-dot"></span>Live</span>
+        </div>
+        <table class="data-table" style="font-size:12px;">
+          <thead><tr><th>MDB Name</th><th>Listening on</th><th>Server</th><th>Pool Size</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>OrderProcessingMDB</td><td style="color:var(--text-muted);font-size:11px">OrderQueue</td><td style="font-size:11px">SOAServer1</td><td>5</td><td><span class="badge badge-teal"><span class="badge-dot"></span>Active</span></td></tr>
+            <tr><td>BillingEventMDB</td><td style="color:var(--text-muted);font-size:11px">BillingQueue</td><td style="font-size:11px">SOAServer2</td><td>3</td><td><span class="badge badge-teal"><span class="badge-dot"></span>Active</span></td></tr>
+            <tr><td>C2MOutboundMDB</td><td style="color:var(--text-muted);font-size:11px">C2MErrorQueue</td><td style="font-size:11px">SOAServer1</td><td>2</td><td><span class="badge badge-amber"><span class="badge-dot"></span>Paused</span></td></tr>
+            <tr><td>NotificationMDB</td><td style="color:var(--text-muted);font-size:11px">NotificationQueue</td><td style="font-size:11px">SOAServer2</td><td>4</td><td><span class="badge badge-teal"><span class="badge-dot"></span>Active</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-purple"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div><div class="benefit-title">Live listener status</div><div class="benefit-desc">Active, paused, or stopped state for every MDB across all nodes — tracked via JMX without any instrumentation.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">Paused MDB alerts</div><div class="benefit-desc">Get notified the moment an MDB pauses or stops — before the queue backlog grows and business processes stall.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/></svg></div><div><div class="benefit-title">Queue association</div><div class="benefit-desc">See which queue or topic each MDB is listening on — cross-reference with queue depth to spot stalled consumers instantly.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg></div><div><div class="benefit-title">Pool size visibility</div><div class="benefit-desc">Track the configured bean pool size per MDB — useful for capacity planning and throughput troubleshooting.</div></div></div>
       </div>
     </div>
   </div>
