@@ -30,7 +30,7 @@
 
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero-badge"><span class="badge badge-teal">Architecture</span></div>
+    <div class="page-hero-badge"><div class="section-label" style="margin-bottom:0">Architecture</div></div>
     <h1>Configure once. Track everything, always.</h1>
     <p>Connect your servers, message brokers, APIs, databases, and log sources once. Pulse Monitor continuously monitors all of them — across every environment — with polling intervals, alert thresholds, and scheduler jobs all tuned to your load and team.</p>
   </div>
@@ -48,7 +48,7 @@
       <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;z-index:1;">
         <div style="width:56px;height:56px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;color:white;font-family:var(--font-display);font-size:20px;font-weight:300;">1</div>
         <div style="margin-top:14px;font-size:13px;font-weight:500;color:var(--text-primary)">Your servers &amp; systems</div>
-        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;line-height:1.5">Any combination of app servers, message brokers, databases, and APIs</div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;line-height:1.5">WebLogic, Tomcat, Kubernetes, Docker, or any FTP log source</div>
       </div>
       <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;z-index:1;">
         <div style="width:56px;height:56px;border-radius:50%;background:var(--navy-light);display:flex;align-items:center;justify-content:center;color:white;font-family:var(--font-display);font-size:20px;font-weight:300;">2</div>
@@ -74,8 +74,49 @@
   </div>
 </section>
 
-<!-- DEPLOYMENT ARCHITECTURE -->
+<!-- SERVER TYPES — NEW -->
 <section class="section section-alt">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-label">Server types</div>
+      <h2>Register any server type — one form, right collector</h2>
+      <p style="margin:10px auto 0;max-width:520px;">Operators register every monitored system from Application Configuration. The Server Type you choose determines which collector runs and what the credential fields mean.</p>
+    </div>
+    <div class="grid-2 mt-40" style="gap:16px;">
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="card-icon icon-blue" style="margin-bottom:0;width:36px;height:36px;"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/></svg></div>
+          <h4>Oracle WebLogic Server</h4>
+        </div>
+        <p style="font-size:13px;">Host:Port = AdminServer T3 listen address. Collector prepends <code style="font-size:11px;background:var(--sky);padding:1px 4px;border-radius:3px">t3://</code> automatically. FTP used for log download when Log Analyzer is enabled.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="card-icon icon-amber" style="margin-bottom:0;width:36px;height:36px;"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div>
+          <h4>Apache Tomcat</h4>
+        </div>
+        <p style="font-size:13px;">Host:Port = full base URL e.g. <code style="font-size:11px;background:var(--sky);padding:1px 4px;border-radius:3px">https://tomcat-uat-01:8443</code>. Requires a <code style="font-size:11px;background:var(--sky);padding:1px 4px;border-radius:3px">manager-script</code> role user. FTP for log analysis. Prefer HTTPS in SIT/UAT/PROD.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="card-icon icon-teal" style="margin-bottom:0;width:36px;height:36px;"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg></div>
+          <h4>Kubernetes</h4>
+        </div>
+        <p style="font-size:13px;">Host:Port = kube-apiserver URL. <strong>Username</strong> is repurposed as the namespace (blank = cluster-wide). <strong>Password</strong> is the ServiceAccount bearer token. Log analysis skipped by policy.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div class="card-icon icon-purple" style="margin-bottom:0;width:36px;height:36px;"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <h4>Docker</h4>
+        </div>
+        <p style="font-size:13px;">Host:Port = Docker Engine HTTP API e.g. <code style="font-size:11px;background:var(--sky);padding:1px 4px;border-radius:3px">http://docker-host:2375</code>. User/password only needed if a reverse proxy enforces Basic auth. Log analysis skipped by policy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPLOYMENT ARCHITECTURE -->
+<section class="section">
   <div class="container">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
       <div>
@@ -97,6 +138,7 @@
             <span style="font-size:13px;color:var(--text-secondary)">Pulse Monitor takes over — continuous monitoring, cross-server search, API tracking, and alerts from that point on</span>
           </div>
         </div>
+      </div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <div class="card">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
@@ -132,7 +174,7 @@
 </section>
 
 <!-- DATA SOURCES SETUP -->
-<section class="section">
+<section class="section section-alt">
   <div class="container">
     <div class="section-header">
       <div class="section-label">Database setup</div>
@@ -148,7 +190,7 @@
 </section>
 
 <!-- SECURITY MODEL -->
-<section class="section section-alt">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <div class="section-label">Security model</div>
@@ -157,37 +199,32 @@
     <div class="timeline">
       <div class="tl-item animate-up">
         <div class="tl-content">
-          
           <h4>TlsEnforcementFilter + SecurityHeadersFilter</h4>
-          <p>HSTS, browser security headers, and TLS-only traffic. Controlled per environment via pulse.security.* flags in the properties file.</p>
+          <p>HSTS, CSP, browser security headers, and TLS-only traffic. CIDR-allowlisted forwarded header trust so X-Forwarded-Proto/For cannot be spoofed by untrusted proxies. Controlled per environment via <code style="font-size:11px;background:var(--sky);padding:1px 4px;border-radius:3px">pulse.security.*</code> flags.</p>
         </div>
       </div>
       <div class="tl-item animate-up delay-1">
         <div class="tl-content">
-          
           <h4>Session management + PageFlowFilter</h4>
           <p>Flow token issued at POST /flow/token. PageFlowFilter enforces token for all authenticated GET navigation and AJAX patterns.</p>
         </div>
       </div>
       <div class="tl-item animate-up delay-2">
         <div class="tl-content">
-          
           <h4>MenuAuthorizationFilter + PulseMenuPathAuthorization</h4>
           <p>Path-to-menu RBAC mapping. Users see only navigation entries they are authorised to access. Menu search respects the same allowedMenus set.</p>
         </div>
       </div>
       <div class="tl-item animate-up delay-3">
         <div class="tl-content">
-          
           <h4>CsrfFilter + pulse-security-nav.js</h4>
-          <p>Synchronizer token validation on all mutating requests. Client-side JS injects X-CSRF-Token, X-Pulse-Flow-Token, and X-Requested-With automatically.</p>
+          <p>Synchronizer token validation on all mutating requests. Client-side JS injects X-CSRF-Token, X-Pulse-Flow-Token, and X-Requested-With automatically. GET /logout renders a confirm page that POSTs back with the CSRF token in SIT/UAT/PROD, blocking drive-by logout attacks.</p>
         </div>
       </div>
       <div class="tl-item animate-up delay-4">
         <div class="tl-content">
-          
           <h4>RateLimitFilter</h4>
-          <p>Protects all endpoints from excessive request volumes. Configurable per endpoint pattern.</p>
+          <p>Bounded LRU map with TTL eviction protects all endpoints. A separate stricter cap applies to POST /login to slow credential stuffing. Per-IP key is derived only after CIDR-trusted forwarded headers, so it cannot be spoofed.</p>
         </div>
       </div>
     </div>
@@ -197,7 +234,7 @@
 <section style="background:var(--teal);padding:56px 0;">
   <div class="container text-center">
     <h2 style="color:white;">Ready to deploy?</h2>
-    <p style="color:rgba(255,255,255,.75);max-width:400px;margin:12px auto 0;">Get in touch and we'll walk you through the setup for your WebLogic environment.</p>
+    <p style="color:rgba(255,255,255,.75);max-width:400px;margin:12px auto 0;">Get in touch and we'll walk you through the setup for your environment.</p>
     <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px;">
       <a href="contact.html" class="btn btn-white">Request access</a>
       <a href="technology.html" class="btn" style="color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.3);padding:10px 22px;">Technology stack</a>
@@ -208,12 +245,12 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Pulse Monitor</div><p>Enterprise monitoring for Oracle Fusion Middleware.</p></div>
+      <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Pulse Monitor</div><p>Enterprise monitoring for Enterprise Integration.</p></div>
       <div class="footer-col"><h5>Product</h5><a href="features.html">Features</a><a href="modules.html">Modules</a><a href="how-it-works.html">How it works</a><a href="technology.html">Technology</a></div>
       <div class="footer-col"><h5>Platform</h5><a href="technology.html">WebLogic 12c</a><a href="technology.html">SOA Suite</a><a href="technology.html">OSB</a><a href="technology.html">Oracle DB</a></div>
       <div class="footer-col"><h5>Company</h5><a href="contact.html">Contact</a><a href="contact.html">Request access</a></div>
     </div>
-    <div class="footer-bottom"><p>© 2026 Pulse Monitor</p><div class="footer-tags"><span class="footer-tag">Java EE 8</span><span class="footer-tag">WebLogic 12c</span><span class="footer-tag">WLST</span></div></div>
+    <div class="footer-bottom"><p>© 2026 Pulse Monitor · Enterprise Integration Monitoring</p><div class="footer-tags"><span class="footer-tag">Java EE 8</span><span class="footer-tag">WebLogic 12c</span><span class="footer-tag">WLST</span></div></div>
   </div>
 </footer>
 <script src="js/main.js"></script>

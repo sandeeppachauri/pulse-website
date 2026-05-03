@@ -33,7 +33,7 @@
   <div class="container">
     <div class="page-hero-badge"><span class="badge badge-teal">Platform foundation</span></div>
     <h1>Built on proven enterprise standards</h1>
-    <p>Pulse Monitor runs entirely within your existing Oracle infrastructure. No new servers. No external cloud services. No vendor lock-in beyond what you already run.</p>
+    <p>Pulse Monitor runs entirely within your existing infrastructure. No new servers. No external cloud services. No vendor lock-in beyond what you already run.</p>
     <div class="page-hero-actions">
       <a href="contact.html" class="btn btn-primary">Request access</a>
       <a href="how-it-works.html" class="btn btn-outline">How it works</a>
@@ -48,12 +48,78 @@
   <div class="stat-cell"><div class="stat-num">100%</div><div class="stat-label">On-premises — your data stays yours</div></div>
 </div>
 
-<!-- PLATFORM FIT -->
+<!-- SUPPORTED SERVER TYPES — NEW -->
 <section class="section">
   <div class="container">
     <div class="section-header text-center">
+      <div class="section-label">Supported server types</div>
+      <h2>Monitor any server in your estate</h2>
+      <p style="margin:10px auto 0;max-width:540px;">Register any combination of server types. Each uses its own purpose-built collector — no generic polling, no guesswork.</p>
+    </div>
+    <div class="grid-2 mt-40" style="gap:16px;">
+
+      <div class="card animate-up">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <div class="card-icon icon-blue" style="margin-bottom:0"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div><h4>Oracle WebLogic Server</h4><span class="badge badge-blue">Default</span></div>
+        </div>
+        <p style="font-size:13px;">WLST/T3-based collector. Pulls per-managed-server CPU, heap, threads, lifecycle, and JDBC data sources. Supports trust-store scanning, MDB tracking, and FTP-based log download.</p>
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;">
+          <span class="badge badge-blue">WLST</span><span class="badge badge-blue">T3/T3S</span><span class="badge badge-blue">JMX</span><span class="badge badge-blue">FTP log download</span>
+        </div>
+      </div>
+
+      <div class="card animate-up delay-1">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <div class="card-icon icon-amber" style="margin-bottom:0"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <div><h4>Apache Tomcat</h4><span class="badge badge-amber">HTTP collector</span></div>
+        </div>
+        <p style="font-size:13px;">Reads JVM and thread details from <code style="font-size:11px;background:var(--sky);padding:1px 5px;border-radius:4px">manager/text/vminfo</code> and enriches with connector/request counters from <code style="font-size:11px;background:var(--sky);padding:1px 5px;border-radius:4px">manager/status?XML=true</code>. FTP used for log analysis. No JMX exposure required.</p>
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;">
+          <span class="badge badge-amber">Tomcat Manager API</span><span class="badge badge-amber">FTP logs</span><span class="badge badge-amber">HTTPS support</span>
+        </div>
+      </div>
+
+      <div class="card animate-up delay-2">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <div class="card-icon icon-teal" style="margin-bottom:0"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg></div>
+          <div><h4>Kubernetes</h4><span class="badge badge-teal">REST collector</span></div>
+        </div>
+        <p style="font-size:13px;">Pulls pod and node summary from the kube-apiserver via <code style="font-size:11px;background:var(--sky);padding:1px 5px;border-radius:4px">/api/v1/pods</code> and <code style="font-size:11px;background:var(--sky);padding:1px 5px;border-radius:4px">/api/v1/nodes</code>. Namespace-scoped or cluster-wide. Uses a ServiceAccount bearer token — no privileged access needed. Log analysis skipped by policy for K8s.</p>
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;">
+          <span class="badge badge-teal">kube-apiserver</span><span class="badge badge-teal">Bearer token</span><span class="badge badge-teal">Namespace scoping</span>
+        </div>
+      </div>
+
+      <div class="card animate-up delay-3">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <div class="card-icon icon-purple" style="margin-bottom:0"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div><h4>Docker</h4><span class="badge badge-purple">REST collector</span></div>
+        </div>
+        <p style="font-size:13px;">Calls the Docker Engine HTTP API — <code style="font-size:11px;background:var(--sky);padding:1px 5px;border-radius:4px">/containers/json</code>, <code style="font-size:11px;background:var(--sky);padding:1px 5px;border-radius:4px">/info</code>, per-container inspect and one-shot stats. Dashboard shows an eight-section engine view: host overview, container list, memory/PIDs, network and disk I/O, mount inventory, and topology hints. Up to 200 containers per run.</p>
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;">
+          <span class="badge badge-purple">Docker Engine API</span><span class="badge badge-purple">Container stats</span><span class="badge badge-purple">8-section dashboard</span>
+        </div>
+      </div>
+
+      <div class="card animate-up" style="grid-column:1/-1">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <div class="card-icon icon-coral" style="margin-bottom:0"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
+          <div><h4>Other — FTP log analysis only</h4><span class="badge badge-amber">Log-only</span></div>
+        </div>
+        <p style="font-size:13px;">No infra collector — exists so the log analyzer can poll any generic FTP location for arbitrary <code style="font-size:11px;background:var(--sky);padding:1px 5px;border-radius:4px">.log / .txt / .out</code> files. Set <strong>Server Health Check = NO</strong> for this type.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM FIT -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header text-center">
       <div class="section-label">Platform fit</div>
-      <h2>Designed to live inside your Oracle environment</h2>
+      <h2>Designed to live inside your infrastructure</h2>
       <p style="margin:10px auto 0;max-width:540px;">Most monitoring tools require you to open firewall ports, install cloud connectors, or send telemetry to third-party servers. Pulse Monitor does none of that.</p>
     </div>
     <div class="grid-3 mt-40">
@@ -83,83 +149,51 @@
 </section>
 
 <!-- PILLARS -->
-<section class="section section-alt">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <div class="section-label">Technology pillars</div>
       <h2>Four foundations that make Pulse Monitor reliable</h2>
     </div>
     <div class="grid-2">
-
       <div class="card animate-up">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-          <div class="card-icon icon-blue" style="margin-bottom:0">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <div>
-            <h4>Oracle WebLogic 12c</h4>
-            <span class="badge badge-blue">Application server</span>
-          </div>
+          <div class="card-icon icon-blue" style="margin-bottom:0"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div><h4>Oracle WebLogic 12c</h4><span class="badge badge-blue">Application server</span></div>
         </div>
         <p style="font-size:13px;">Pulse Monitor deploys as a standard WAR to the same WebLogic domain it monitors. It reuses your existing server infrastructure, JDBC connection pools, and JNDI naming — no separate middleware tier.</p>
         <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;">
-          <span class="badge badge-blue">Multi-environment</span>
-          <span class="badge badge-blue">JNDI data sources</span>
-          <span class="badge badge-blue">Deployment plans</span>
+          <span class="badge badge-blue">Multi-environment</span><span class="badge badge-blue">JNDI data sources</span><span class="badge badge-blue">Deployment plans</span>
         </div>
       </div>
-
       <div class="card animate-up delay-1">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-          <div class="card-icon icon-teal" style="margin-bottom:0">
-            <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-          </div>
-          <div>
-            <h4>Oracle Database</h4>
-            <span class="badge badge-teal">Persistence</span>
-          </div>
+          <div class="card-icon icon-teal" style="margin-bottom:0"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+          <div><h4>Oracle Database</h4><span class="badge badge-teal">Persistence</span></div>
         </div>
         <p style="font-size:13px;">All Pulse tables are created in your existing Oracle schema. Configuration, alerts, deployment records, metric snapshots, log analysis results, and certificate data are all stored and queryable via standard SQL.</p>
         <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;">
-          <span class="badge badge-teal">JPA / Hibernate</span>
-          <span class="badge badge-teal">Zero extra licences</span>
-          <span class="badge badge-teal">SQL DDL provided</span>
+          <span class="badge badge-teal">JPA / Hibernate</span><span class="badge badge-teal">Zero extra licences</span><span class="badge badge-teal">SQL DDL provided</span>
         </div>
       </div>
-
       <div class="card animate-up delay-2">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-          <div class="card-icon icon-coral" style="margin-bottom:0">
-            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <div>
-            <h4>WLST — WebLogic Scripting Tool</h4>
-            <span class="badge badge-amber">Metrics engine</span>
-          </div>
+          <div class="card-icon icon-coral" style="margin-bottom:0"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div><h4>WLST — WebLogic Scripting Tool</h4><span class="badge badge-amber">Metrics engine</span></div>
         </div>
         <p style="font-size:13px;">Metric collection scripts bundled inside the application connect to your server infrastructure on a configurable schedule. No agents, no JMX exposure beyond the admin port you already use.</p>
         <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;">
-          <span class="badge badge-amber">Agentless</span>
-          <span class="badge badge-amber">Configurable polling</span>
-          <span class="badge badge-amber">Bundled in WAR</span>
+          <span class="badge badge-amber">Agentless</span><span class="badge badge-amber">Configurable polling</span><span class="badge badge-amber">Bundled in WAR</span>
         </div>
       </div>
-
       <div class="card animate-up delay-3">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-          <div class="card-icon icon-purple" style="margin-bottom:0">
-            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-          </div>
-          <div>
-            <h4>AI — LangChain4j &amp; LLM</h4>
-            <span class="badge badge-purple">Intelligence layer</span>
-          </div>
+          <div class="card-icon icon-purple" style="margin-bottom:0"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div><h4>AI — LangChain4j &amp; LLM</h4><span class="badge badge-purple">Intelligence layer</span></div>
         </div>
         <p style="font-size:13px;">The Qiyara chatbot and AI log analytics are powered by LangChain4j. The LLM key is configured per environment in your properties file and never transmitted outside your infrastructure.</p>
         <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;">
-          <span class="badge badge-purple">LangChain4j</span>
-          <span class="badge badge-purple">Configurable LLM</span>
-          <span class="badge badge-purple">On-prem control</span>
+          <span class="badge badge-purple">LangChain4j</span><span class="badge badge-purple">Configurable LLM</span><span class="badge badge-purple">On-prem control</span>
         </div>
       </div>
     </div>
@@ -167,11 +201,11 @@
 </section>
 
 <!-- COMPATIBILITY -->
-<section class="section">
+<section class="section section-alt">
   <div class="container">
     <div class="section-header text-center">
       <div class="section-label">Compatibility</div>
-      <h2>Works with the Oracle products you already use</h2>
+      <h2>Works with the products you already use</h2>
     </div>
     <div class="grid-4 mt-32">
       <div class="card text-center animate-up">
@@ -180,34 +214,34 @@
         <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Application server host</p>
       </div>
       <div class="card text-center animate-up delay-1">
+        <div class="card-icon icon-amber" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg></div>
+        <h4 style="font-size:13px;">Apache Tomcat</h4>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">HTTP Manager collector</p>
+      </div>
+      <div class="card text-center animate-up delay-2">
+        <div class="card-icon icon-teal" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg></div>
+        <h4 style="font-size:13px;">Kubernetes</h4>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">REST kube-apiserver</p>
+      </div>
+      <div class="card text-center animate-up delay-3">
+        <div class="card-icon icon-purple" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h4 style="font-size:13px;">Docker</h4>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Docker Engine HTTP API</p>
+      </div>
+      <div class="card text-center animate-up">
         <div class="card-icon icon-teal" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
         <h4 style="font-size:13px;">Oracle SOA Suite</h4>
         <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Composite monitoring</p>
       </div>
-      <div class="card text-center animate-up delay-2">
+      <div class="card text-center animate-up delay-1">
         <div class="card-icon icon-amber" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
         <h4 style="font-size:13px;">Oracle Service Bus</h4>
         <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">OSB deploy &amp; monitor</p>
       </div>
-      <div class="card text-center animate-up delay-3">
+      <div class="card text-center animate-up delay-2">
         <div class="card-icon icon-green" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
         <h4 style="font-size:13px;">Oracle Database</h4>
         <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">All persistence</p>
-      </div>
-      <div class="card text-center animate-up">
-        <div class="card-icon icon-coral" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <h4 style="font-size:13px;">Oracle ESS Scheduler</h4>
-        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Job scheduling</p>
-      </div>
-      <div class="card text-center animate-up delay-1">
-        <div class="card-icon icon-blue" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
-        <h4 style="font-size:13px;">Oracle MDS</h4>
-        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Metadata repository</p>
-      </div>
-      <div class="card text-center animate-up delay-2">
-        <div class="card-icon icon-purple" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-        <h4 style="font-size:13px;">CCB / JDE</h4>
-        <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">Integration views</p>
       </div>
       <div class="card text-center animate-up delay-3">
         <div class="card-icon icon-teal" style="margin:0 auto 12px"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
@@ -219,40 +253,40 @@
 </section>
 
 <!-- SECURITY REASSURANCE -->
-<section class="section section-alt">
+<section class="section">
   <div class="container">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
       <div>
         <div class="section-label">Security &amp; compliance</div>
         <h2>Your data never leaves your infrastructure</h2>
         <p class="mt-16">Pulse Monitor was built from the ground up for organisations with strict data sovereignty requirements. Every metric, log entry, alert, and configuration record stays inside your Oracle database behind your firewall.</p>
-        <p class="mt-12">Security controls include layered request hardening, role-based menu access, CSRF protection, TLS enforcement, and rate limiting — all configurable per environment without touching application code.</p>
+        <p class="mt-12">Security controls include layered request hardening, role-based menu access, CSRF protection on all mutating actions, TLS enforcement with HSTS, CIDR-aware forwarded header trust, and a bounded LRU rate limiter with a separate stricter cap for login — all configurable per environment.</p>
         <a href="how-it-works.html" class="btn btn-outline mt-24">See the security model</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
           <div style="width:10px;height:10px;border-radius:50%;background:#1d9e75;flex-shrink:0"></div>
           <div style="font-size:13px;color:var(--text-secondary);">No telemetry sent to external servers</div>
         </div>
-        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
           <div style="width:10px;height:10px;border-radius:50%;background:#1d9e75;flex-shrink:0"></div>
           <div style="font-size:13px;color:var(--text-secondary);">Secrets stored in environment properties — never in source code</div>
         </div>
-        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
           <div style="width:10px;height:10px;border-radius:50%;background:#1d9e75;flex-shrink:0"></div>
-          <div style="font-size:13px;color:var(--text-secondary);">Role-based access — users only see what they're permitted to view</div>
+          <div style="font-size:13px;color:var(--text-secondary);">CSRF protection on all mutating requests via synchronizer token</div>
         </div>
-        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
           <div style="width:10px;height:10px;border-radius:50%;background:#1d9e75;flex-shrink:0"></div>
-          <div style="font-size:13px;color:var(--text-secondary);">TLS enforcement and secure session cookies in production</div>
+          <div style="font-size:13px;color:var(--text-secondary);">TLS enforcement, HSTS, and CSP headers — stricter per environment</div>
         </div>
-        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
           <div style="width:10px;height:10px;border-radius:50%;background:#1d9e75;flex-shrink:0"></div>
-          <div style="font-size:13px;color:var(--text-secondary);">CSRF protection on all mutating actions</div>
+          <div style="font-size:13px;color:var(--text-secondary);">Bounded LRU rate limiter with stricter login cap to block credential stuffing</div>
         </div>
-        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:white;border:1px solid var(--border);border-radius:var(--radius-md);">
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);">
           <div style="width:10px;height:10px;border-radius:50%;background:#1d9e75;flex-shrink:0"></div>
-          <div style="font-size:13px;color:var(--text-secondary);">Rate limiting protects against abusive request patterns</div>
+          <div style="font-size:13px;color:var(--text-secondary);">Role-based menu RBAC — users only see what they're permitted to view</div>
         </div>
       </div>
     </div>
@@ -273,12 +307,12 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Pulse Monitor</div><p>Enterprise monitoring for Oracle Fusion Middleware. Built for WebLogic operations teams.</p></div>
+      <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Pulse Monitor</div><p>Enterprise monitoring for Enterprise Integration. Built for WebLogic operations teams.</p></div>
       <div class="footer-col"><h5>Product</h5><a href="features.html">Features</a><a href="modules.html">Modules</a><a href="how-it-works.html">How it works</a><a href="technology.html">Technology</a></div>
       <div class="footer-col"><h5>Platform</h5><a href="technology.html">WebLogic 12c</a><a href="technology.html">SOA Suite</a><a href="technology.html">OSB</a><a href="technology.html">Oracle DB</a></div>
       <div class="footer-col"><h5>Company</h5><a href="contact.html">Contact</a><a href="contact.html">Request access</a></div>
     </div>
-    <div class="footer-bottom"><p>© 2026 Pulse Monitor · FMW Monitoring</p><div class="footer-tags"><span class="footer-tag">On-premises</span><span class="footer-tag">WebLogic 12c</span><span class="footer-tag">AI-powered</span></div></div>
+    <div class="footer-bottom"><p>© 2026 Pulse Monitor · Enterprise Integration Monitoring</p><div class="footer-tags"><span class="footer-tag">On-premises</span><span class="footer-tag">WebLogic 12c</span><span class="footer-tag">AI-powered</span></div></div>
   </div>
 </footer>
 <script src="js/main.js"></script>

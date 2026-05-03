@@ -12,17 +12,8 @@
     .form-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 36px; box-shadow: var(--shadow-md); }
     .form-group { margin-bottom: 20px; }
     .form-label { display: block; font-size: 13px; font-weight: 500; color: var(--text-primary); margin-bottom: 6px; }
-    .form-input, .form-select, .form-textarea {
-      width: 100%; padding: 10px 14px;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius-md); font-family: var(--font-sans);
-      font-size: 14px; color: var(--text-primary);
-      transition: border-color .15s, box-shadow .15s;
-      outline: none;
-    }
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--teal); box-shadow: 0 0 0 3px rgba(8,145,178,.1);
-    }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: 14px; color: var(--text-primary); transition: border-color .15s, box-shadow .15s; outline: none; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(8,145,178,.1); }
     .form-textarea { resize: vertical; min-height: 100px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
@@ -60,117 +51,62 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="page-hero">
   <div class="container">
     <div class="page-hero-badge"><span class="badge badge-teal">Get in touch</span></div>
     <h1>Let's get Pulse Monitor running in your environment</h1>
-    <p>Tell us about your Oracle infrastructure and we'll walk you through the deployment — typically up and running the same day.</p>
+    <p>Tell us about your infrastructure and we'll walk you through the deployment — typically up and running the same day.</p>
   </div>
 </section>
 
-<!-- MAIN CONTENT -->
 <section class="section">
   <div class="container">
     <div class="contact-grid">
-
-      <!-- LEFT: INFO -->
       <div>
         <h3 style="margin-bottom:6px;">What happens next?</h3>
         <p style="font-size:14px;margin-bottom:28px;">Fill in the form and we'll reach out within one business day to understand your environment and get you set up.</p>
 
         <div class="info-item">
           <div class="info-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <div>
-            <div class="info-title">Initial discovery call</div>
-            <div class="info-desc">We'll understand your WebLogic domain, environments, and team structure to plan the right deployment approach.</div>
-          </div>
+          <div><div class="info-title">Initial discovery call</div><div class="info-desc">We'll understand your environment, server types, and team structure to plan the right deployment approach.</div></div>
         </div>
-
         <div class="info-item">
           <div class="info-icon icon-blue"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <div>
-            <div class="info-title">Guided deployment</div>
-            <div class="info-desc">We provide the WAR, deployment plan, and DDL scripts. Most teams have Pulse Monitor running in a SIT environment within a few hours.</div>
-          </div>
+          <div><div class="info-title">Guided deployment</div><div class="info-desc">We provide the WAR, deployment plan, and DDL scripts. Most teams have Pulse Monitor running in a SIT environment within a few hours.</div></div>
         </div>
-
         <div class="info-item">
           <div class="info-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <div>
-            <div class="info-title">Team onboarding</div>
-            <div class="info-desc">We walk through the dashboard, alert configuration, and Qiyara AI chatbot with your operations team so everyone is confident from day one.</div>
-          </div>
+          <div><div class="info-title">Team onboarding</div><div class="info-desc">We walk through the dashboard, alert configuration, and Qiyara AI chatbot with your operations team so everyone is confident from day one.</div></div>
         </div>
-
         <div class="info-item">
           <div class="info-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-          <div>
-            <div class="info-title">Ongoing support</div>
-            <div class="info-desc">Updates, new features, and direct access to the team — your middleware stack is too important for slow support queues.</div>
-          </div>
+          <div><div class="info-title">Ongoing support</div><div class="info-desc">Updates, new features, and direct access to the team — your integration stack is too important for slow support queues.</div></div>
         </div>
 
-        <!-- WHAT YOU GET -->
         <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;margin-top:28px;">
           <div style="font-size:12px;font-weight:500;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;">What's included</div>
           <div style="display:flex;flex-direction:column;gap:8px;">
-            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Full WAR deployment package
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Database DDL and seed scripts
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Environment configuration templates
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Step-by-step deployment guide
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Team onboarding session
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Access to all future module updates
-            </div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Full WAR deployment package</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Database DDL and seed scripts</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Environment configuration templates</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Step-by-step deployment guide</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Team onboarding session</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1d9e75" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Access to all future module updates</div>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT: FORM -->
       <div>
         <div class="form-card">
           <h3 style="margin-bottom:6px;">Request access</h3>
           <p style="font-size:13px;color:var(--text-secondary);margin-bottom:24px;">Tell us a bit about your environment and we'll be in touch shortly.</p>
-
           <form id="contactForm" onsubmit="handleSubmit(event)">
             <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="firstName">First name</label>
-                <input class="form-input" type="text" id="firstName" placeholder="Jane" required />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="lastName">Last name</label>
-                <input class="form-input" type="text" id="lastName" placeholder="Smith" required />
-              </div>
+              <div class="form-group"><label class="form-label" for="firstName">First name</label><input class="form-input" type="text" id="firstName" placeholder="Jane" required /></div>
+              <div class="form-group"><label class="form-label" for="lastName">Last name</label><input class="form-input" type="text" id="lastName" placeholder="Smith" required /></div>
             </div>
-
-            <div class="form-group">
-              <label class="form-label" for="email">Work email</label>
-              <input class="form-input" type="email" id="email" placeholder="jane.smith@company.com" required />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="organisation">Organisation</label>
-              <input class="form-input" type="text" id="organisation" placeholder="Your company name" required />
-            </div>
-
+            <div class="form-group"><label class="form-label" for="email">Work email</label><input class="form-input" type="email" id="email" placeholder="jane.smith@company.com" required /></div>
+            <div class="form-group"><label class="form-label" for="organisation">Organisation</label><input class="form-input" type="text" id="organisation" placeholder="Your company name" required /></div>
             <div class="form-group">
               <label class="form-label" for="role">Your role</label>
               <select class="form-select" id="role">
@@ -183,34 +119,26 @@
                 <option>Other</option>
               </select>
             </div>
-
             <div class="form-group">
-              <label class="form-label" for="environment">Oracle environment</label>
+              <label class="form-label" for="environment">Your environment</label>
               <select class="form-select" id="environment">
                 <option value="">What are you running?</option>
                 <option>WebLogic 12c + SOA Suite</option>
                 <option>WebLogic 12c + OSB</option>
                 <option>WebLogic 12c + SOA Suite + OSB</option>
-                <option>WebLogic 12c only</option>
-                <option>Other / mixed</option>
+                <option>Apache Tomcat</option>
+                <option>Kubernetes</option>
+                <option>Docker</option>
+                <option>Mixed / multiple</option>
               </select>
             </div>
-
-            <div class="form-group">
-              <label class="form-label" for="message">Anything else we should know?</label>
-              <textarea class="form-textarea" id="message" placeholder="Number of environments, team size, specific monitoring challenges, timeline..."></textarea>
-            </div>
-
+            <div class="form-group"><label class="form-label" for="message">Anything else we should know?</label><textarea class="form-textarea" id="message" placeholder="Number of environments, team size, specific monitoring challenges, timeline..."></textarea></div>
             <button type="submit" class="form-submit">Send request →</button>
             <div class="form-note">We'll respond within one business day. No spam, ever.</div>
           </form>
-
-          <div class="success-msg" id="successMsg">
-            ✓ Thanks! We've received your request and will be in touch within one business day.
-          </div>
+          <div class="success-msg" id="successMsg">✓ Thanks! We've received your request and will be in touch within one business day.</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -223,30 +151,12 @@
       <h2>Things teams usually ask before deploying</h2>
     </div>
     <div class="grid-2 mt-32">
-      <div class="card animate-up">
-        <h4>How long does deployment take?</h4>
-        <p style="font-size:13px;margin-top:8px;">Most teams have Pulse Monitor running in a SIT environment within half a day. Production deployment typically follows within a week once the team has validated it in lower environments.</p>
-      </div>
-      <div class="card animate-up delay-1">
-        <h4>Do we need to install anything on the WebLogic servers?</h4>
-        <p style="font-size:13px;margin-top:8px;">No. Pulse Monitor is a standard WAR deployed to your existing WebLogic cluster. WLST scripts are bundled inside the WAR — nothing is installed on the managed servers themselves.</p>
-      </div>
-      <div class="card animate-up delay-2">
-        <h4>Will it affect the performance of our SOA domain?</h4>
-        <p style="font-size:13px;margin-top:8px;">The WLST polling is lightweight — equivalent to a periodic admin console page load. The scheduler jobs run off-peak by default. In production use, teams report no measurable impact on SOA or OSB throughput.</p>
-      </div>
-      <div class="card animate-up delay-3">
-        <h4>Can we use it across multiple environments?</h4>
-        <p style="font-size:13px;margin-top:8px;">Yes. Pulse Monitor supports Local, SIT, UAT, and Production out of the box. Each environment gets its own properties file and deployment plan variables. One WAR, deployed four times.</p>
-      </div>
-      <div class="card animate-up">
-        <h4>Does the AI chatbot send our data to the cloud?</h4>
-        <p style="font-size:13px;margin-top:8px;">The Qiyara chatbot sends queries to whichever LLM you configure — you can point it to an on-premises model or a cloud provider of your choice. The LLM key is configured in your environment properties and never hard-coded.</p>
-      </div>
-      <div class="card animate-up delay-1">
-        <h4>What does the database setup involve?</h4>
-        <p style="font-size:13px;margin-top:8px;">We provide two SQL scripts — one for schema creation and one for seed data — which a DBA runs against your existing Oracle schema. Pulse Monitor then creates and manages its own tables inside that schema.</p>
-      </div>
+      <div class="card animate-up"><h4>How long does deployment take?</h4><p style="font-size:13px;margin-top:8px;">Most teams have Pulse Monitor running in a SIT environment within half a day. Production deployment typically follows within a week once the team has validated it in lower environments.</p></div>
+      <div class="card animate-up delay-1"><h4>Do we need to install anything on the servers?</h4><p style="font-size:13px;margin-top:8px;">No. Pulse Monitor is a standard WAR deployed to your existing WebLogic cluster. WLST scripts are bundled inside the WAR — nothing is installed on the managed servers themselves.</p></div>
+      <div class="card animate-up delay-2"><h4>Does it support Kubernetes and Docker?</h4><p style="font-size:13px;margin-top:8px;">Yes. Kubernetes and Docker are supported server types alongside WebLogic and Tomcat. Each uses its own purpose-built REST collector — register them in Application Configuration like any other server.</p></div>
+      <div class="card animate-up delay-3"><h4>Can we use it across multiple environments?</h4><p style="font-size:13px;margin-top:8px;">Yes. Pulse Monitor supports Local, SIT, UAT, and Production out of the box. Each environment gets its own properties file and deployment plan variables. One WAR, deployed four times.</p></div>
+      <div class="card animate-up"><h4>Does the AI chatbot send our data to the cloud?</h4><p style="font-size:13px;margin-top:8px;">The Qiyara chatbot sends queries to whichever LLM you configure — you can point it to an on-premises model or a cloud provider of your choice. The LLM key is configured in your environment properties and never hard-coded.</p></div>
+      <div class="card animate-up delay-1"><h4>What does the database setup involve?</h4><p style="font-size:13px;margin-top:8px;">We provide two SQL scripts — one for schema creation and one for seed data — which a DBA runs against your existing Oracle schema. Pulse Monitor then creates and manages its own tables inside that schema.</p></div>
     </div>
   </div>
 </section>
@@ -265,15 +175,14 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Pulse Monitor</div><p>Enterprise monitoring for Oracle Fusion Middleware. Built for WebLogic operations teams.</p></div>
+      <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-mark"><svg viewBox="0 0 24 24"><path d="M3 17 L8 10 L12 14 L16 7 L21 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Pulse Monitor</div><p>Enterprise monitoring for Enterprise Integration. Built for WebLogic operations teams.</p></div>
       <div class="footer-col"><h5>Product</h5><a href="features.html">Features</a><a href="modules.html">Modules</a><a href="how-it-works.html">How it works</a><a href="technology.html">Technology</a></div>
       <div class="footer-col"><h5>Platform</h5><a href="technology.html">WebLogic 12c</a><a href="technology.html">SOA Suite</a><a href="technology.html">OSB</a><a href="technology.html">Oracle DB</a></div>
       <div class="footer-col"><h5>Company</h5><a href="contact.html">Contact</a><a href="contact.html">Request access</a></div>
     </div>
-    <div class="footer-bottom"><p>© 2026 Pulse Monitor · FMW Monitoring</p><div class="footer-tags"><span class="footer-tag">On-premises</span><span class="footer-tag">WebLogic 12c</span><span class="footer-tag">AI-powered</span></div></div>
+    <div class="footer-bottom"><p>© 2026 Pulse Monitor · Enterprise Integration Monitoring</p><div class="footer-tags"><span class="footer-tag">On-premises</span><span class="footer-tag">WebLogic 12c</span><span class="footer-tag">AI-powered</span></div></div>
   </div>
 </footer>
-
 <script>
 function handleSubmit(e) {
   e.preventDefault();
