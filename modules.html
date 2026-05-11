@@ -25,6 +25,14 @@
     .anchor-nav { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 0; border-bottom: 1px solid var(--border); }
     .anchor-nav a { font-size: 12px; color: var(--text-secondary); padding: 4px 12px; border-radius: 999px; border: 1px solid var(--border); transition: background .15s, color .15s, border-color .15s; }
     .anchor-nav a:hover { background: var(--sky); color: var(--navy); border-color: var(--sky-mid); }
+
+    /* Module flow diagram */
+    .module-diagram { margin-top: 24px; background: var(--sky-soft); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px 12px 12px; }
+    .module-diagram-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; color: var(--text-secondary); margin-bottom: 10px; }
+    .module-diagram svg { width: 100%; height: auto; display: block; }
+
+    /* ITSM badge */
+    .badge-new { display: inline-flex; align-items: center; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; border-radius: 999px; font-size: 10px; font-weight: 600; padding: 2px 9px; margin-left: 8px; letter-spacing:.04em; }
   </style>
 </head>
 <body>
@@ -49,7 +57,7 @@
 
 <section class="page-hero">
   <div class="container">
-    <div class="page-hero-badge"><span class="badge badge-blue">12 modules</span></div>
+    <div class="page-hero-badge"><span class="badge badge-blue">13 modules</span></div>
     <h1>Every module your middleware team needs</h1>
     <p>From live server health to API dependency tracking, message queues to cloud integrations — Pulse Monitor covers the full operational lifecycle of your Enterprise Integration platform.</p>
     <div class="page-hero-actions">
@@ -60,7 +68,7 @@
 </section>
 
 <div class="stats-strip">
-  <div class="stat-cell"><div class="stat-num">12</div><div class="stat-label">Operational modules</div></div>
+  <div class="stat-cell"><div class="stat-num">13</div><div class="stat-label">Operational modules</div></div>
   <div class="stat-cell"><div class="stat-num">~10h</div><div class="stat-label">Weekly hours saved per team</div></div>
   <div class="stat-cell"><div class="stat-num">4</div><div class="stat-label">Environments — Local, SIT, UAT, PROD</div></div>
   <div class="stat-cell"><div class="stat-num">24/7</div><div class="stat-label">Automated background monitoring</div></div>
@@ -82,6 +90,7 @@
       <a href="#datasources">Database health</a>
       <a href="#schedulers">Schedulers</a>
       <a href="#cloud">Cloud &amp; integrations</a>
+      <a href="#itsm">ITSM tickets</a>
     </div>
   </div>
 </div>
@@ -100,6 +109,32 @@
       <h3>See every node, at a glance, right now</h3>
       <p class="mt-12">Your operations team should never have to log into the admin console just to find out if a server is healthy. The Pulse Monitor live dashboard aggregates memory usage, heap pressure, thread activity, and request throughput for every node in your cluster — refreshed on a configurable schedule tuned to your environment's size and load.</p>
       <p class="mt-12">When a node starts struggling, the dashboard flags it immediately. Select any server from the list to see its full metric breakdown, 24-hour request traffic chart, and endpoint performance data from automated log analysis.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 72" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <!-- Nodes -->
+          <rect x="2" y="18" width="96" height="36" rx="6" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+          <text x="50" y="40" text-anchor="middle" font-size="11" fill="#0c4a6e" font-family="sans-serif">Cluster nodes</text>
+          <line x1="100" y1="36" x2="124" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a1)"/>
+          <rect x="126" y="18" width="96" height="36" rx="6" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+          <text x="174" y="36" text-anchor="middle" font-size="11" fill="#0c4a6e" font-family="sans-serif">JMX polling</text>
+          <text x="174" y="48" text-anchor="middle" font-size="10" fill="#0369a1" font-family="sans-serif">(configurable)</text>
+          <line x1="224" y1="36" x2="248" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a1)"/>
+          <rect x="250" y="18" width="96" height="36" rx="6" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+          <text x="298" y="36" text-anchor="middle" font-size="11" fill="#0c4a6e" font-family="sans-serif">Metric store</text>
+          <text x="298" y="48" text-anchor="middle" font-size="10" fill="#0369a1" font-family="sans-serif">(history + live)</text>
+          <line x1="348" y1="36" x2="372" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a1)"/>
+          <rect x="374" y="18" width="96" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="422" y="36" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">Dashboard</text>
+          <text x="422" y="48" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">+ alerts</text>
+          <line x1="472" y1="36" x2="496" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a1)"/>
+          <rect x="498" y="18" width="40" height="36" rx="6" fill="#fef9c3" stroke="#fde047" stroke-width="0.8"/>
+          <text x="518" y="40" text-anchor="middle" font-size="10" fill="#713f12" font-family="sans-serif">Team</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div><div class="benefit-title">Live KPI strip</div><div class="benefit-desc">Total servers, active nodes, average RAM, heap pressure, stuck threads, and requests per hour — all on one screen.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/></svg></div><div><div class="benefit-title">Node resource table</div><div class="benefit-desc">Per-node RAM bars, heap used vs free, stuck thread count, and active request count across every server.</div></div></div>
@@ -119,6 +154,29 @@
     <div>
       <h3>Know which composites are faulting before users complain</h3>
       <p class="mt-12">SOA composite faults accumulate silently until a business process fails. Pulse Monitor queries the SOA infrastructure directly to surface composite health, fault counts, and instance states across all clusters — without needing to open Enterprise Manager.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 72" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <rect x="2" y="18" width="100" height="36" rx="6" fill="#ccfbf1" stroke="#5eead4" stroke-width="0.8"/>
+          <text x="52" y="36" text-anchor="middle" font-size="11" fill="#134e4a" font-family="sans-serif">SOA infra</text>
+          <text x="52" y="48" text-anchor="middle" font-size="10" fill="#0f766e" font-family="sans-serif">all clusters</text>
+          <line x1="104" y1="36" x2="128" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a2)"/>
+          <rect x="130" y="18" width="100" height="36" rx="6" fill="#ccfbf1" stroke="#5eead4" stroke-width="0.8"/>
+          <text x="180" y="36" text-anchor="middle" font-size="11" fill="#134e4a" font-family="sans-serif">Query engine</text>
+          <text x="180" y="48" text-anchor="middle" font-size="10" fill="#0f766e" font-family="sans-serif">fault + state</text>
+          <line x1="232" y1="36" x2="256" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a2)"/>
+          <rect x="258" y="18" width="100" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="308" y="36" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">Threshold check</text>
+          <text x="308" y="48" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">per composite</text>
+          <line x1="360" y1="36" x2="384" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a2)"/>
+          <rect x="386" y="18" width="150" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="461" y="36" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">Alert + drill-down view</text>
+          <text x="461" y="48" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">fault count, instances</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div><div><div class="benefit-title">Composite health list</div><div class="benefit-desc">All composites with partition, revision, state, and 24-hour fault count in one clear view.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">Fault threshold alerts</div><div class="benefit-desc">Set fault count thresholds per composite — Pulse fires an alert the moment a service starts degrading.</div></div></div>
@@ -138,6 +196,35 @@
     <div>
       <h3>One place to monitor all your message brokers</h3>
       <p class="mt-12">Message queue backlogs are one of the most common causes of silent failures in enterprise middleware. Pulse Monitor gives your team continuous visibility into every messaging destination — across WebLogic JMS, Oracle AQ, RabbitMQ, and Kafka — from a single dashboard.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 80" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <!-- brokers stacked left -->
+          <rect x="2" y="4" width="80" height="20" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.7"/>
+          <text x="42" y="18" text-anchor="middle" font-size="10" fill="#78350f" font-family="sans-serif">JMS / AQ</text>
+          <rect x="2" y="30" width="80" height="20" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.7"/>
+          <text x="42" y="44" text-anchor="middle" font-size="10" fill="#78350f" font-family="sans-serif">RabbitMQ</text>
+          <rect x="2" y="56" width="80" height="20" rx="4" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.7"/>
+          <text x="42" y="70" text-anchor="middle" font-size="10" fill="#78350f" font-family="sans-serif">Kafka</text>
+          <line x1="84" y1="14" x2="130" y2="36" stroke="#94a3b8" stroke-width="1" marker-end="url(#a3)"/>
+          <line x1="84" y1="40" x2="130" y2="40" stroke="#94a3b8" stroke-width="1" marker-end="url(#a3)"/>
+          <line x1="84" y1="66" x2="130" y2="44" stroke="#94a3b8" stroke-width="1" marker-end="url(#a3)"/>
+          <rect x="132" y="22" width="100" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="182" y="38" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">Pulse poller</text>
+          <text x="182" y="50" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">depth + consumers</text>
+          <line x1="234" y1="40" x2="258" y2="40" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a3)"/>
+          <rect x="260" y="22" width="100" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="310" y="38" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">Threshold alert</text>
+          <text x="310" y="50" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">per-queue config</text>
+          <line x1="362" y1="40" x2="386" y2="40" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a3)"/>
+          <rect x="388" y="22" width="148" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="462" y="38" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">Dashboard + DLQ</text>
+          <text x="462" y="50" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">browse &amp; inspect</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="benefit-title">Live depth &amp; consumer tracking</div><div class="benefit-desc">Current depth, consumer count, and pending messages refreshed continuously for all JMS destinations.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-coral"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">Per-queue threshold alerts</div><div class="benefit-desc">Configure independent thresholds per queue type — tighter limits for DLQs, broader for standard processing queues.</div></div></div>
@@ -157,6 +244,29 @@
     <div>
       <h3>Know when a message-driven bean stops listening</h3>
       <p class="mt-12">Message-Driven Beans are the silent workers of your middleware layer. When an MDB pauses, suspends, or loses its connection to its destination, messages pile up and business processes stall. Pulse Monitor tracks the health of every registered MDB via JMX — alerts fire immediately when a listener goes down.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 72" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <rect x="2" y="18" width="96" height="36" rx="6" fill="#ede9fe" stroke="#c4b5fd" stroke-width="0.8"/>
+          <text x="50" y="36" text-anchor="middle" font-size="11" fill="#2e1065" font-family="sans-serif">JMX endpoint</text>
+          <text x="50" y="48" text-anchor="middle" font-size="10" fill="#4c1d95" font-family="sans-serif">per node</text>
+          <line x1="100" y1="36" x2="124" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a4)"/>
+          <rect x="126" y="18" width="106" height="36" rx="6" fill="#ede9fe" stroke="#c4b5fd" stroke-width="0.8"/>
+          <text x="179" y="36" text-anchor="middle" font-size="11" fill="#2e1065" font-family="sans-serif">MDB state poll</text>
+          <text x="179" y="48" text-anchor="middle" font-size="10" fill="#4c1d95" font-family="sans-serif">active/paused/stopped</text>
+          <line x1="234" y1="36" x2="258" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a4)"/>
+          <rect x="260" y="18" width="110" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="315" y="36" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">Alert on pause</text>
+          <text x="315" y="48" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">before queue builds</text>
+          <line x1="372" y1="36" x2="396" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a4)"/>
+          <rect x="398" y="18" width="138" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="467" y="36" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">Dashboard + queue</text>
+          <text x="467" y="48" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">cross-reference</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-purple"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="2"/></svg></div><div><div class="benefit-title">Live listener status</div><div class="benefit-desc">Active, paused, or stopped state for every MDB across all nodes — tracked via JMX without any instrumentation.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">Paused MDB alerts</div><div class="benefit-desc">Get notified the moment an MDB pauses or stops — before the queue backlog grows.</div></div></div>
@@ -176,6 +286,29 @@
     <div>
       <h3>Understand your API landscape before making changes</h3>
       <p class="mt-12">Pulse Monitor maintains a Swagger-backed API catalog with full dependency hierarchy — so your team understands downstream impact before any change reaches production. Automated reachability checks ping every registered endpoint on a schedule and surface failures immediately.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 72" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <rect x="2" y="18" width="104" height="36" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+          <text x="54" y="36" text-anchor="middle" font-size="11" fill="#7f1d1d" font-family="sans-serif">Swagger specs</text>
+          <text x="54" y="48" text-anchor="middle" font-size="10" fill="#991b1b" font-family="sans-serif">registered APIs</text>
+          <line x1="108" y1="36" x2="132" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a5)"/>
+          <rect x="134" y="18" width="110" height="36" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+          <text x="189" y="36" text-anchor="middle" font-size="11" fill="#7f1d1d" font-family="sans-serif">Dep. hierarchy</text>
+          <text x="189" y="48" text-anchor="middle" font-size="10" fill="#991b1b" font-family="sans-serif">blast-radius map</text>
+          <line x1="246" y1="36" x2="270" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a5)"/>
+          <rect x="272" y="18" width="110" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="327" y="36" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">Reach. checks</text>
+          <text x="327" y="48" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">scheduled pings</text>
+          <line x1="384" y1="36" x2="408" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a5)"/>
+          <rect x="410" y="18" width="126" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="473" y="36" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">API hub + alerts</text>
+          <text x="473" y="48" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">response trend</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-coral"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><div class="benefit-title">Swagger API hub</div><div class="benefit-desc">Browse, preview, and share API specs for every registered service — internal and cloud — in one place.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="3" cy="6" r="2"/><circle cx="21" cy="6" r="2"/><circle cx="3" cy="18" r="2"/><circle cx="21" cy="18" r="2"/></svg></div><div><div class="benefit-title">Dependency hierarchy</div><div class="benefit-desc">Visual map showing which services depend on which APIs — understand the blast radius before any change.</div></div></div>
@@ -195,6 +328,29 @@
     <div>
       <h3>Get notified before users raise a ticket</h3>
       <p class="mt-12">Every significant operational event — stuck threads, JDBC pool pressure, JMS backlog, certificate expiry, composite faults, unreachable APIs — can be configured as a Pulse alert with threshold and severity. Delivery via JMS in real time. Alert history is stored and searchable.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 72" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <rect x="2" y="18" width="104" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="54" y="36" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">Event trigger</text>
+          <text x="54" y="48" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">any module</text>
+          <line x1="108" y1="36" x2="132" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a6)"/>
+          <rect x="134" y="18" width="110" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="189" y="36" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">Threshold eval</text>
+          <text x="189" y="48" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">severity config</text>
+          <line x1="246" y1="36" x2="270" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a6)"/>
+          <rect x="272" y="18" width="110" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="327" y="36" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">JMS delivery</text>
+          <text x="327" y="48" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">real-time</text>
+          <line x1="384" y1="36" x2="408" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a6)"/>
+          <rect x="410" y="18" width="128" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="474" y="36" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">Bell panel + history</text>
+          <text x="474" y="48" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">searchable log</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-coral"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div><div class="benefit-title">Stuck threads &amp; node faults</div><div class="benefit-desc">Fires immediately when thread counts or node states cross configured thresholds on any cluster node.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div><div class="benefit-title">JDBC pool pressure</div><div class="benefit-desc">Alert when a connection pool usage exceeds your threshold — before requests start queuing and timing out.</div></div></div>
@@ -214,6 +370,32 @@
     <div>
       <h3>Deploy composites and services without leaving the browser</h3>
       <p class="mt-12">Select the package, select the environment, and click deploy. Pulse handles everything from build to verification and records the outcome for compliance and post-deployment review.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 72" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <rect x="2" y="18" width="90" height="36" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+          <text x="47" y="36" text-anchor="middle" font-size="11" fill="#7f1d1d" font-family="sans-serif">Git / FTP</text>
+          <text x="47" y="48" text-anchor="middle" font-size="10" fill="#991b1b" font-family="sans-serif">artifact source</text>
+          <line x1="94" y1="36" x2="118" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a7)"/>
+          <rect x="120" y="18" width="100" height="36" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+          <text x="170" y="36" text-anchor="middle" font-size="11" fill="#7f1d1d" font-family="sans-serif">Build + package</text>
+          <text x="170" y="48" text-anchor="middle" font-size="10" fill="#991b1b" font-family="sans-serif">automated</text>
+          <line x1="222" y1="36" x2="246" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a7)"/>
+          <rect x="248" y="18" width="100" height="36" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="0.8"/>
+          <text x="298" y="36" text-anchor="middle" font-size="11" fill="#7f1d1d" font-family="sans-serif">Deploy to env</text>
+          <text x="298" y="48" text-anchor="middle" font-size="10" fill="#991b1b" font-family="sans-serif">SIT / UAT / PROD</text>
+          <line x1="350" y1="36" x2="374" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a7)"/>
+          <rect x="376" y="18" width="100" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="426" y="36" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">Verify + log</text>
+          <text x="426" y="48" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">audit trail</text>
+          <line x1="478" y1="36" x2="502" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a7)"/>
+          <rect x="504" y="22" width="34" height="28" rx="5" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="521" y="40" text-anchor="middle" font-size="10" fill="#14532d" font-family="sans-serif">✓</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-coral"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="benefit-title">Browser-based deployment</div><div class="benefit-desc">Select package, select environment, deploy — the pipeline handles build, package, and verification automatically.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg></div><div><div class="benefit-title">Git &amp; FTP source support</div><div class="benefit-desc">Pull artifacts from Git repositories or FTP servers — whichever your team uses for source control.</div></div></div>
@@ -233,6 +415,29 @@
     <div>
       <h3>Find the fault in minutes, not an afternoon</h3>
       <p class="mt-12">Pulse Monitor automates log ingestion with a scheduled pipeline that runs in the background and surfaces meaningful results in the dashboard. The AI analytics layer groups recurring faults, highlights slow query patterns, and identifies anomalies — with context about which service, which server, and how often.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 72" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <rect x="2" y="18" width="90" height="36" rx="6" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+          <text x="47" y="36" text-anchor="middle" font-size="11" fill="#0c4a6e" font-family="sans-serif">Server logs</text>
+          <text x="47" y="48" text-anchor="middle" font-size="10" fill="#0369a1" font-family="sans-serif">FTP / auto</text>
+          <line x1="94" y1="36" x2="118" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a8)"/>
+          <rect x="120" y="18" width="100" height="36" rx="6" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+          <text x="170" y="36" text-anchor="middle" font-size="11" fill="#0c4a6e" font-family="sans-serif">Scheduled ingest</text>
+          <text x="170" y="48" text-anchor="middle" font-size="10" fill="#0369a1" font-family="sans-serif">background pipeline</text>
+          <line x1="222" y1="36" x2="246" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a8)"/>
+          <rect x="248" y="18" width="110" height="36" rx="6" fill="#ede9fe" stroke="#c4b5fd" stroke-width="0.8"/>
+          <text x="303" y="36" text-anchor="middle" font-size="11" fill="#2e1065" font-family="sans-serif">AI pattern scan</text>
+          <text x="303" y="48" text-anchor="middle" font-size="10" fill="#4c1d95" font-family="sans-serif">fault grouping</text>
+          <line x1="360" y1="36" x2="384" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a8)"/>
+          <rect x="386" y="18" width="150" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="461" y="36" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">Dashboard insights</text>
+          <text x="461" y="48" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">anomalies + hints</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div><div class="benefit-title">Scheduled log ingestion</div><div class="benefit-desc">Log files are picked up and processed automatically — no manual intervention, no SSH sessions required.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-purple"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div><div><div class="benefit-title">AI pattern detection</div><div class="benefit-desc">Recurring faults, slow queries, and anomalies are grouped and surfaced with suggested remediation hints.</div></div></div>
@@ -252,6 +457,29 @@
     <div>
       <h3>Ask your middleware questions in plain English</h3>
       <p class="mt-12">Qiyara queries the same Pulse metadata your dashboard shows — answers are fast, relevant, and grounded in real data. Ask "Which composites had faults today?", "Is any certificate expiring this month?", "What is the heap pressure on the production cluster?" and get answers immediately from the dashboard widget.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 72" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a9" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <rect x="2" y="18" width="90" height="36" rx="6" fill="#ede9fe" stroke="#c4b5fd" stroke-width="0.8"/>
+          <text x="47" y="36" text-anchor="middle" font-size="11" fill="#2e1065" font-family="sans-serif">User query</text>
+          <text x="47" y="48" text-anchor="middle" font-size="10" fill="#4c1d95" font-family="sans-serif">plain language</text>
+          <line x1="94" y1="36" x2="118" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a9)"/>
+          <rect x="120" y="18" width="110" height="36" rx="6" fill="#ede9fe" stroke="#c4b5fd" stroke-width="0.8"/>
+          <text x="175" y="36" text-anchor="middle" font-size="11" fill="#2e1065" font-family="sans-serif">LLM engine</text>
+          <text x="175" y="48" text-anchor="middle" font-size="10" fill="#4c1d95" font-family="sans-serif">configurable provider</text>
+          <line x1="232" y1="36" x2="256" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a9)"/>
+          <rect x="258" y="18" width="110" height="36" rx="6" fill="#ede9fe" stroke="#c4b5fd" stroke-width="0.8"/>
+          <text x="313" y="36" text-anchor="middle" font-size="11" fill="#2e1065" font-family="sans-serif">Pulse metadata</text>
+          <text x="313" y="48" text-anchor="middle" font-size="10" fill="#4c1d95" font-family="sans-serif">live + cached data</text>
+          <line x1="370" y1="36" x2="394" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a9)"/>
+          <rect x="396" y="18" width="140" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="466" y="36" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">Instant answer</text>
+          <text x="466" y="48" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">in dashboard widget</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div><div class="benefit-title">Natural language queries</div><div class="benefit-desc">Ask about server health, faults, deployments, queue status, or certificate expiry in plain language.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="benefit-title">Intent-based responses</div><div class="benefit-desc">"Is anything wrong?" returns a prioritised summary of active alerts and composite faults.</div></div></div>
@@ -271,6 +499,29 @@
     <div>
       <h3>Expired certificates cause outages. Pulse stops that.</h3>
       <p class="mt-12">The scheduler scans every configured trust store path across all registered environments and records each certificate's expiry date. Certificates expiring within 15 days appear as a KPI badge on the main dashboard every single day.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 72" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a10" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <rect x="2" y="18" width="104" height="36" rx="6" fill="#d1fae5" stroke="#6ee7b7" stroke-width="0.8"/>
+          <text x="54" y="36" text-anchor="middle" font-size="11" fill="#064e3b" font-family="sans-serif">Trust stores</text>
+          <text x="54" y="48" text-anchor="middle" font-size="10" fill="#065f46" font-family="sans-serif">all environments</text>
+          <line x1="108" y1="36" x2="132" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a10)"/>
+          <rect x="134" y="18" width="100" height="36" rx="6" fill="#d1fae5" stroke="#6ee7b7" stroke-width="0.8"/>
+          <text x="184" y="36" text-anchor="middle" font-size="11" fill="#064e3b" font-family="sans-serif">Scheduled scan</text>
+          <text x="184" y="48" text-anchor="middle" font-size="10" fill="#065f46" font-family="sans-serif">expiry capture</text>
+          <line x1="236" y1="36" x2="260" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a10)"/>
+          <rect x="262" y="18" width="110" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="317" y="36" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">15-day threshold</text>
+          <text x="317" y="48" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">badge + alert</text>
+          <line x1="374" y1="36" x2="398" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a10)"/>
+          <rect x="400" y="18" width="136" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="468" y="36" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">Cert table + KPI</text>
+          <text x="468" y="48" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">days remaining</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-green"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="benefit-title">Automated trust store scan</div><div class="benefit-desc">Scheduler scans all configured trust store paths — no manual checking, no spreadsheet tracking required.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">15-day dashboard warning</div><div class="benefit-desc">KPI badge on the main dashboard highlights certs expiring within 15 days — impossible to overlook.</div></div></div>
@@ -290,6 +541,29 @@
     <div>
       <h3>Configure multiple databases once — monitor all their health, always</h3>
       <p class="mt-12">Register all your data sources in one place — SOA schema, Pulse DB, ESS scheduler, CCB/JDE, and any custom JNDI-bound source — and Pulse tracks the connection health of every single one continuously. Pool pressure alerts fire before services start failing.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 72" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a11" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <rect x="2" y="18" width="104" height="36" rx="6" fill="#ccfbf1" stroke="#5eead4" stroke-width="0.8"/>
+          <text x="54" y="36" text-anchor="middle" font-size="11" fill="#134e4a" font-family="sans-serif">JDBC sources</text>
+          <text x="54" y="48" text-anchor="middle" font-size="10" fill="#0f766e" font-family="sans-serif">all registered DBs</text>
+          <line x1="108" y1="36" x2="132" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a11)"/>
+          <rect x="134" y="18" width="100" height="36" rx="6" fill="#ccfbf1" stroke="#5eead4" stroke-width="0.8"/>
+          <text x="184" y="36" text-anchor="middle" font-size="11" fill="#134e4a" font-family="sans-serif">Pool poll</text>
+          <text x="184" y="48" text-anchor="middle" font-size="10" fill="#0f766e" font-family="sans-serif">active / max / waiters</text>
+          <line x1="236" y1="36" x2="260" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a11)"/>
+          <rect x="262" y="18" width="100" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="312" y="36" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">Pressure alert</text>
+          <text x="312" y="48" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">per-source threshold</text>
+          <line x1="364" y1="36" x2="388" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a11)"/>
+          <rect x="390" y="18" width="146" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="463" y="36" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">Dashboard pool bars</text>
+          <text x="463" y="48" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">waiter visibility</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="benefit-title">Live pool status with usage bars</div><div class="benefit-desc">Visual pool usage bars and active/max connection counts make pressure visible at a glance.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">Pool pressure alerts</div><div class="benefit-desc">Set a usage threshold per data source — get alerted before the pool exhausts and requests start failing or queuing.</div></div></div>
@@ -309,6 +583,29 @@
     <div>
       <h3>Monitor the background jobs that keep Pulse running</h3>
       <p class="mt-12">Log analysis, certificate scanning, API reachability checks, metric collection — all run via Oracle Enterprise Scheduler Service (ESS). The scheduler module gives your team clear visibility into which jobs are running, which have failed, and when each is next scheduled.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 72" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a12" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <rect x="2" y="18" width="90" height="36" rx="6" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+          <text x="47" y="36" text-anchor="middle" font-size="11" fill="#0c4a6e" font-family="sans-serif">ESS engine</text>
+          <text x="47" y="48" text-anchor="middle" font-size="10" fill="#0369a1" font-family="sans-serif">Oracle scheduler</text>
+          <line x1="94" y1="36" x2="118" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a12)"/>
+          <rect x="120" y="18" width="100" height="36" rx="6" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="0.8"/>
+          <text x="170" y="36" text-anchor="middle" font-size="11" fill="#0c4a6e" font-family="sans-serif">Job dispatch</text>
+          <text x="170" y="48" text-anchor="middle" font-size="10" fill="#0369a1" font-family="sans-serif">logs / certs / APIs</text>
+          <line x1="222" y1="36" x2="246" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a12)"/>
+          <rect x="248" y="18" width="100" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="298" y="36" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">Outcome capture</text>
+          <text x="298" y="48" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">pass / fail + time</text>
+          <line x1="350" y1="36" x2="374" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a12)"/>
+          <rect x="376" y="18" width="160" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="456" y="36" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">Status board + history</text>
+          <text x="456" y="48" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">next-run visibility</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="benefit-title">Job status board</div><div class="benefit-desc">See which background jobs are scheduled, running, completed, or failed — at any time.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></div><div><div class="benefit-title">Run history</div><div class="benefit-desc">Full history of past job executions with timestamps, duration, and outcome for every run.</div></div></div>
@@ -327,7 +624,35 @@
     </div>
     <div>
       <h3>Monitor beyond the WebLogic domain — into the cloud and beyond</h3>
-      <p class="mt-12">Pulse Monitor extends visibility beyond the WebLogic domain to cover the health and behaviour of the systems your middleware connects to — cloud applications, external APIs, utility platforms, and legacy ERP systems. Whether your integration layer talks to Oracle CCB, JD Edwards, a cloud-hosted API, or a Customer-to-Meter platform, Pulse tracks the outcomes alongside your on-premises health.</p>
+      <p class="mt-12">Pulse Monitor extends visibility beyond the WebLogic domain to cover the health and behaviour of the systems your middleware connects to — cloud applications, external APIs, utility platforms, and legacy ERP systems.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 80" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a13" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <rect x="2" y="4" width="80" height="20" rx="4" fill="#ede9fe" stroke="#c4b5fd" stroke-width="0.7"/>
+          <text x="42" y="18" text-anchor="middle" font-size="10" fill="#2e1065" font-family="sans-serif">Cloud APIs</text>
+          <rect x="2" y="30" width="80" height="20" rx="4" fill="#ede9fe" stroke="#c4b5fd" stroke-width="0.7"/>
+          <text x="42" y="44" text-anchor="middle" font-size="10" fill="#2e1065" font-family="sans-serif">CCB / JDE</text>
+          <rect x="2" y="56" width="80" height="20" rx="4" fill="#ede9fe" stroke="#c4b5fd" stroke-width="0.7"/>
+          <text x="42" y="70" text-anchor="middle" font-size="10" fill="#2e1065" font-family="sans-serif">C2M platform</text>
+          <line x1="84" y1="14" x2="130" y2="36" stroke="#94a3b8" stroke-width="1" marker-end="url(#a13)"/>
+          <line x1="84" y1="40" x2="130" y2="40" stroke="#94a3b8" stroke-width="1" marker-end="url(#a13)"/>
+          <line x1="84" y1="66" x2="130" y2="44" stroke="#94a3b8" stroke-width="1" marker-end="url(#a13)"/>
+          <rect x="132" y="22" width="104" height="36" rx="6" fill="#ede9fe" stroke="#c4b5fd" stroke-width="0.8"/>
+          <text x="184" y="38" text-anchor="middle" font-size="11" fill="#2e1065" font-family="sans-serif">Reachability</text>
+          <text x="184" y="50" text-anchor="middle" font-size="10" fill="#4c1d95" font-family="sans-serif">scheduled checks</text>
+          <line x1="238" y1="40" x2="262" y2="40" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a13)"/>
+          <rect x="264" y="22" width="104" height="36" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="0.8"/>
+          <text x="316" y="38" text-anchor="middle" font-size="11" fill="#78350f" font-family="sans-serif">Dep. map</text>
+          <text x="316" y="50" text-anchor="middle" font-size="10" fill="#92400e" font-family="sans-serif">blast radius</text>
+          <line x1="370" y1="40" x2="394" y2="40" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a13)"/>
+          <rect x="396" y="22" width="140" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="466" y="38" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">Pulse dashboard</text>
+          <text x="466" y="50" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">unified view</text>
+        </svg>
+      </div>
+
       <div class="benefit-grid">
         <div class="benefit-row"><div class="benefit-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg></div><div><div class="benefit-title">Cloud API monitoring</div><div class="benefit-desc">Register cloud-hosted API endpoints — reachability checks run on schedule and failures surface immediately.</div></div></div>
         <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/></svg></div><div><div class="benefit-title">CCB / JDE integration views</div><div class="benefit-desc">Dedicated views for Oracle Customer Care and Billing and JD Edwards integration data — visible alongside your SOA metrics.</div></div></div>
@@ -337,13 +662,58 @@
     </div>
   </div>
 
+  <!-- 14. ITSM TICKET MANAGER — NEW -->
+  <div class="module-block" id="itsm">
+    <div class="module-sidebar">
+      <div class="module-sidebar-icon icon-green"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+      <h4>ITSM Ticket Manager <span class="badge-new">NEW</span></h4>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3px;"><span class="cap-pill">One-click raise</span><span class="cap-pill">Auto-populate</span><span class="cap-pill">Live tracking</span><span class="cap-pill">ServiceNow / Jira</span></div>
+    </div>
+    <div>
+      <h3>Raise and track ITSM tickets without leaving the dashboard</h3>
+      <p class="mt-12">When an alert fires or an anomaly surfaces, your team should be able to act on it immediately — not copy-paste details into a separate ITSM portal. The Pulse ITSM module lets engineers raise incident, change, or problem tickets directly from any alert, composite fault, or server health event, with fields pre-populated from live Pulse data.</p>
+      <p class="mt-12">Tickets are tracked from creation to resolution inside Pulse. The dashboard shows open ticket count as a KPI badge, and every ticket links back to the original Pulse event so context is never lost when incidents are handed across shifts.</p>
+
+      <div class="module-diagram">
+        <div class="module-diagram-label">How it works</div>
+        <svg viewBox="0 0 540 72" xmlns="http://www.w3.org/2000/svg">
+          <defs><marker id="a14" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+          <rect x="2" y="18" width="104" height="36" rx="6" fill="#d1fae5" stroke="#6ee7b7" stroke-width="0.8"/>
+          <text x="54" y="36" text-anchor="middle" font-size="11" fill="#064e3b" font-family="sans-serif">Pulse event</text>
+          <text x="54" y="48" text-anchor="middle" font-size="10" fill="#065f46" font-family="sans-serif">alert / fault / anomaly</text>
+          <line x1="108" y1="36" x2="132" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a14)"/>
+          <rect x="134" y="18" width="110" height="36" rx="6" fill="#d1fae5" stroke="#6ee7b7" stroke-width="0.8"/>
+          <text x="189" y="36" text-anchor="middle" font-size="11" fill="#064e3b" font-family="sans-serif">One-click raise</text>
+          <text x="189" y="48" text-anchor="middle" font-size="10" fill="#065f46" font-family="sans-serif">pre-filled fields</text>
+          <line x1="246" y1="36" x2="270" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a14)"/>
+          <rect x="272" y="18" width="100" height="36" rx="6" fill="#d1fae5" stroke="#6ee7b7" stroke-width="0.8"/>
+          <text x="322" y="36" text-anchor="middle" font-size="11" fill="#064e3b" font-family="sans-serif">ITSM platform</text>
+          <text x="322" y="48" text-anchor="middle" font-size="10" fill="#065f46" font-family="sans-serif">ServiceNow / Jira</text>
+          <line x1="374" y1="36" x2="398" y2="36" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#a14)"/>
+          <rect x="400" y="18" width="136" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="0.8"/>
+          <text x="468" y="36" text-anchor="middle" font-size="11" fill="#14532d" font-family="sans-serif">Track in Pulse</text>
+          <text x="468" y="48" text-anchor="middle" font-size="10" fill="#166534" font-family="sans-serif">open count KPI</text>
+        </svg>
+      </div>
+
+      <div class="benefit-grid">
+        <div class="benefit-row"><div class="benefit-icon icon-green"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><div><div class="benefit-title">One-click ticket creation</div><div class="benefit-desc">Raise an incident, change, or problem ticket directly from any alert or event — title, description, severity, and affected system pre-filled from live Pulse data.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="benefit-title">Live ticket status tracker</div><div class="benefit-desc">Open, in-progress, and resolved tickets visible inside Pulse — no need to switch to the ITSM portal to check progress.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-teal"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="benefit-title">ServiceNow &amp; Jira support</div><div class="benefit-desc">Connects to your existing ITSM platform via API — works with ServiceNow, Jira Service Management, and configurable REST targets.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-amber"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div><div><div class="benefit-title">Open ticket KPI badge</div><div class="benefit-desc">Main dashboard shows open incident count at a glance — your team always knows how many active issues need attention.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-purple"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div><div class="benefit-title">Event-to-ticket linkback</div><div class="benefit-desc">Every ticket retains a direct link to the originating Pulse event — full context preserved across shift handovers.</div></div></div>
+        <div class="benefit-row"><div class="benefit-icon icon-coral"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div><div><div class="benefit-title">Ticket history &amp; audit</div><div class="benefit-desc">Searchable log of all tickets raised from Pulse — who raised it, when, from which event, and the resolution outcome.</div></div></div>
+      </div>
+    </div>
+  </div>
+
 </div>
 </section>
 
 <section style="background:var(--teal);padding:56px 0;">
   <div class="container text-center">
-    <h2 style="color:white;">All 12 modules. One deployment.</h2>
-    <p style="color:rgba(255,255,255,.75);max-width:440px;margin:12px auto 0;">A single deployment to your WebLogic server gives your team access to everything — from server health to cloud API monitoring.</p>
+    <h2 style="color:white;">All 13 modules. One deployment.</h2>
+    <p style="color:rgba(255,255,255,.75);max-width:440px;margin:12px auto 0;">A single deployment to your WebLogic server gives your team access to everything — from server health to ITSM ticket management.</p>
     <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px;">
       <a href="contact.html" class="btn btn-white">Get started</a>
       <a href="how-it-works.html" class="btn" style="color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.3);padding:10px 22px;">How it works</a>
